@@ -1,0 +1,31 @@
+<?php
+
+namespace Cocur\Chain\Link;
+
+use PHPUnit_Framework_TestCase;
+
+/**
+ * IntersectTest
+ *
+ * @package   Cocur\Chain\Link
+ * @author    Florian Eckerstorfer
+ * @copyright 2015 Florian Eckerstorfer
+ */
+class IntersectTest extends PHPUnit_Framework_TestCase
+{
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Intersect::intersect()
+     */
+    public function intersectIntersectsWithArray()
+    {
+        /** @var \Cocur\Chain\Link\Intersect $mock */
+        $mock = $this->getMockForTrait('Cocur\Chain\Link\Intersect');
+        $mock->array = [1, 2, 3];
+        $mock->intersect([3, 4, 5]);
+
+        $this->assertContains(3, $mock->array);
+        $this->assertNotContains(1, $mock->array);
+        $this->assertNotContains(2, $mock->array);
+    }
+}
