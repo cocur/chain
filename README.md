@@ -99,6 +99,7 @@ instead of the array.
 - `->filter(callable)`
 - `->intersect(array|chain)`
 - `->map(callable)`
+- `->merge(array|chain)`
 
 ### Array Access
 

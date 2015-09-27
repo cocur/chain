@@ -7,7 +7,10 @@ use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
 use Cocur\Chain\Link\Intersect;
+use Cocur\Chain\Link\IntersectAssoc;
+use Cocur\Chain\Link\IntersectKey;
 use Cocur\Chain\Link\Map;
+use Cocur\Chain\Link\Merge;
 use Cocur\Chain\Link\Reduce;
 use Cocur\Chain\Link\Sum;
 
@@ -25,7 +28,10 @@ class Chain
         Filter,
         Fill,
         Intersect,
+        IntersectAssoc,
+        IntersectKey,
         Map,
+        Merge,
         Reduce,
         Sum;
 

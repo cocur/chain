@@ -35,7 +35,10 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'fill'));
         $this->assertTrue(method_exists($c, 'filter'));
         $this->assertTrue(method_exists($c, 'intersect'));
+        $this->assertTrue(method_exists($c, 'intersectAssoc'));
+        $this->assertTrue(method_exists($c, 'intersectKey'));
         $this->assertTrue(method_exists($c, 'map'));
+        $this->assertTrue(method_exists($c, 'merge'));
         $this->assertTrue(method_exists($c, 'reduce'));
         $this->assertTrue(method_exists($c, 'sum'));
     }
