@@ -15,13 +15,12 @@ trait Filter
 {
     /**
      * @param callable $callback
-     * @param int      $flag
      *
      * @return Chain
      */
-    public function filter(callable $callback, $flag = 0)
+    public function filter(callable $callback)
     {
-        $this->array = array_filter($this->array, $callback, $flag);
+        $this->array = array_filter($this->array, $callback);
 
         return $this;
     }
