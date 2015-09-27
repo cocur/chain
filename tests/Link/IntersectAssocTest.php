@@ -30,6 +30,7 @@ class IntersectAssocTest extends PHPUnit_Framework_TestCase
         $this->assertNotContains(1, $mock->array);
         $this->assertNotContains(3, $mock->array);
     }
+
     /**
      * @test
      * @covers Cocur\Chain\Link\IntersectAssoc::intersectAssoc()

@@ -98,6 +98,8 @@ instead of the array.
 - `->diff(array|Chain)`
 - `->filter(callable)`
 - `->intersect(array|chain)`
+- `->intersectAssoc(array|chain)`
+- `->intersectKey(array|chain)`
 - `->map(callable)`
 - `->merge(array|chain)`
 
