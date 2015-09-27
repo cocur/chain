@@ -12,7 +12,7 @@ Motivation
 Let us be honest. Working with arrays in PHP is a mess. First of all, you have to prefix most (but not all) functions
 with `array_`, the parameter ordering is not consistent. For example, `array_map()` expects the callback as first
 parameter and the array as the second, but `array_filter()` expects the array as first and the callback as second. You
-also have to wrap the function calls around the array, the resulting code is not nice to look, not readable and
+also have to wrap the function calls around the array, the resulting code is not nice to look at, not readable and
 hard to understand.
 
 ```php
@@ -28,10 +28,31 @@ $arr = array_filter(
 Chain wraps the array in an object and gives you a chainable interface.
 
 ```php
-$arr = Chain::fill(0, 10, 20)
+$chain = Chain::fill(0, 10, 20)
     ->map(function ($v) { return rand(0, $v); })
     ->filter(function ($v) { return $v & 1; });
 ```
+
+Take a look at the following code. How long do you need to understand it?
+
+```php
+
+echo array_sum(array_intersect(
+    array_diff([1, 2, 3, 4, 5], [0, 1, 9]),
+    array_filter([2, 3, 4], function ($v) { return !($v & 1); })
+));
+```
+
+What about this?
+
+```php
+echo (new Chain([1, 2, 3, 4, 5]))
+    ->diff([0, 1, 9])
+    ->intersect((new Chain([2, 3, 4]))->filter(function ($v) { return !($v & 1); }))
+    ->sum();
+```
+
+*Hint: It takes the diff of two arrays, intersects it with a filtered array and sums it up.*
 
 
 Usage
