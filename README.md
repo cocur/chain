@@ -113,10 +113,19 @@ $chain = new Chain([1, 2, 3]);
 $chain->array; // -> [1, 2, 3]
 ```
 
+Chain implements the [Traversable](http://php.net/manual/en/class.traversable.php) Interface.
+```php
+$chain = new Chain([1, 2, 3]);
+foreach ($chain as $key => $value) {
+  // ...
+}
+```
+
+
 Additionally `Chain` contains a number of methods to access properties of the array. In contrast to the manipulation
 methods these methods return a value instead of a reference to the `Chain` object. That is, array access methods are
 not chainable.
- 
+
 ```php
 $chain = new Chain([1, 2, 3]);
 $chain->count(); // -> 3
