@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain;
 
+use ArrayAccess;
+use ArrayIterator;
 use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
@@ -18,6 +20,7 @@ use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unshift;
 use IteratorAggregate;
+use Traversable;
 
 /**
  * Chain
@@ -26,7 +29,7 @@ use IteratorAggregate;
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
-class Chain implements IteratorAggregate
+class Chain implements ArrayAccess, IteratorAggregate
 {
     use Count,
         Diff,
@@ -58,15 +61,51 @@ class Chain implements IteratorAggregate
     }
 
     /**
-     * Retrieve an external iterator
-     *
-     * @link  http://php.net/manual/en/iteratoraggregate.getiterator.php
-     * @return Traversable An instance of an object implementing <b>Iterator</b> or
-     *        <b>Traversable</b>
-     * @since 5.0.0
+     * @return Traversable
      */
     public function getIterator()
     {
-        return new \ArrayIterator($this->array);
+        return new ArrayIterator($this->array);
+    }
+
+    /**
+     * @param mixed $offset
+     *
+     * @return boolean
+     */
+    public function offsetExists($offset)
+    {
+        return isset($this->array[$offset]);
+    }
+
+    /**
+     * @param mixed $offset
+     *
+     * @return mixed
+     */
+    public function offsetGet($offset)
+    {
+        return $this->array[$offset];
+    }
+
+    /**
+     * @param mixed $offset
+     * @param mixed $value
+     *
+     * @return void
+     */
+    public function offsetSet($offset, $value)
+    {
+        $this->array[$offset] = $value;
+    }
+
+    /**
+     * @param mixed $offset
+     *
+     * @return void
+     */
+    public function offsetUnset($offset)
+    {
+        unset($this->array[$offset]);
     }
 }

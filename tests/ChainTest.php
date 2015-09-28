@@ -49,7 +49,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::getIterator
+     * @covers Cocur\Chain\Chain::getIterator()
      */
     public function chainIsTraversable()
     {
@@ -61,5 +61,24 @@ class ChainTest extends PHPUnit_Framework_TestCase
         foreach($c as $key => $value) {
             $this->assertEquals($data[$key], $value);
         }
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Chain::offsetExists()
+     * @covers Cocur\Chain\Chain::offsetGet()
+     * @covers Cocur\Chain\Chain::offsetSet()
+     * @covers Cocur\Chain\Chain::offsetUnset()
+     */
+    public function chainAllowsArrayAccess()
+    {
+        $c = new Chain();
+
+        $this->assertFalse(isset($c[0]));
+        $c[0] = 'foo';
+        $this->assertTrue(isset($c[0]));
+        $this->assertEquals('foo', $c[0]);
+        unset($c[0]);
+        $this->assertFalse(isset($c[0]));
     }
 }
