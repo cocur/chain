@@ -3,6 +3,8 @@ Chain
 
 > Chain provides you with a consistent and chainable way to work with arrays in PHP.
 
+[![Build Status](https://img.shields.io/travis/cocur/chain/master.svg?style=flat)](https://travis-ci.org/cocur/chain)
+
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
 
@@ -106,6 +108,7 @@ instead of the array.
 - `->push(mixed)`
 - `->reverse([bool])`
 - `->shuffle()`
+- `->unique()`
 - `->unshift(mixed)`
 
 ### Array Access
