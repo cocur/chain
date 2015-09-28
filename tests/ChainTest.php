@@ -49,7 +49,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @covers getIterator
+     * @covers Cocur\Chain\Chain::getIterator
      */
     public function chainIsTraversable()
     {
