@@ -8,16 +8,23 @@ use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
+use Cocur\Chain\Link\Flip;
 use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
+use Cocur\Chain\Link\Keys;
 use Cocur\Chain\Link\Map;
 use Cocur\Chain\Link\Merge;
+use Cocur\Chain\Link\Pad;
 use Cocur\Chain\Link\Pop;
+use Cocur\Chain\Link\Product;
 use Cocur\Chain\Link\Push;
 use Cocur\Chain\Link\Reduce;
+use Cocur\Chain\Link\Reverse;
 use Cocur\Chain\Link\Shift;
+use Cocur\Chain\Link\Shuffle;
 use Cocur\Chain\Link\Sum;
+use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
 use IteratorAggregate;
 use Traversable;
@@ -35,16 +42,23 @@ class Chain implements ArrayAccess, IteratorAggregate
         Diff,
         Filter,
         Fill,
+        Flip,
         Intersect,
         IntersectAssoc,
         IntersectKey,
+        Keys,
         Map,
         Merge,
+        Pad,
         Pop,
+        Product,
         Push,
         Reduce,
+        Reverse,
         Shift,
+        Shuffle,
         Sum,
+        Unique,
         Unshift;
 
     /**

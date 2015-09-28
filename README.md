@@ -96,12 +96,16 @@ instead of the array.
 
 - `->diff(array|Chain)`
 - `->filter(callable)`
+- `->flip()`
 - `->intersect(array|chain)`
 - `->intersectAssoc(array|chain)`
 - `->intersectKey(array|chain)`
 - `->map(callable)`
 - `->merge(array|chain)`
+- `->pad(int, mixed)`
 - `->push(mixed)`
+- `->reverse([bool])`
+- `->shuffle()`
 - `->unshift(mixed)`
 
 ### Array Access
@@ -113,7 +117,8 @@ $chain = new Chain([1, 2, 3]);
 $chain->array; // -> [1, 2, 3]
 ```
 
-Chain implements the [Traversable](http://php.net/manual/en/class.traversable.php) Interface.
+Chain implements the [Traversable](http://php.net/manual/en/class.traversable.php) interface.
+
 ```php
 $chain = new Chain([1, 2, 3]);
 foreach ($chain as $key => $value) {
@@ -121,6 +126,17 @@ foreach ($chain as $key => $value) {
 }
 ```
 
+It also implements the [ArrayAccess](http://php.net/manual/en/class.arrayaccess.php) interface allowing to access
+elements just like in any normal array.
+
+```php
+$chain = new Chain();
+$chain['foo'] = 'bar';
+if (isset($chain['foo'])) {
+    echo $chain['foo'];
+    unset($chain['foo']);
+}
+```
 
 Additionally `Chain` contains a number of methods to access properties of the array. In contrast to the manipulation
 methods these methods return a value instead of a reference to the `Chain` object. That is, array access methods are
@@ -141,6 +157,7 @@ $chain->reduce(function ($current, $value) {
 
 - `->count()`
 - `->pop()`
+- `->product()`
 - `->reduce(callable[, int])`
 - `->shift()`
 - `->sum()`
