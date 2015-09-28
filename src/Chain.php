@@ -17,6 +17,7 @@ use Cocur\Chain\Link\Reduce;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unshift;
+use IteratorAggregate;
 
 /**
  * Chain
@@ -25,7 +26,7 @@ use Cocur\Chain\Link\Unshift;
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
-class Chain
+class Chain implements IteratorAggregate
 {
     use Count,
         Diff,
@@ -54,5 +55,18 @@ class Chain
     public function __construct(array $array = [])
     {
         $this->array = $array;
+    }
+
+    /**
+     * Retrieve an external iterator
+     *
+     * @link  http://php.net/manual/en/iteratoraggregate.getiterator.php
+     * @return Traversable An instance of an object implementing <b>Iterator</b> or
+     *        <b>Traversable</b>
+     * @since 5.0.0
+     */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->array);
     }
 }

@@ -46,4 +46,20 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'sum'));
         $this->assertTrue(method_exists($c, 'unshift'));
     }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Chain::getIterator
+     */
+    public function chainIsTraversable()
+    {
+        $data = ['a', 'b'];
+        $c = new Chain($data);
+
+        $this->assertInstanceOf('\Traversable', $c);
+
+        foreach($c as $key => $value) {
+            $this->assertEquals($data[$key], $value);
+        }
+    }
 }
