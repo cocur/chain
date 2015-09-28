@@ -11,8 +11,12 @@ use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
 use Cocur\Chain\Link\Map;
 use Cocur\Chain\Link\Merge;
+use Cocur\Chain\Link\Pop;
+use Cocur\Chain\Link\Push;
 use Cocur\Chain\Link\Reduce;
+use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Sum;
+use Cocur\Chain\Link\Unshift;
 
 /**
  * Chain
@@ -32,8 +36,12 @@ class Chain
         IntersectKey,
         Map,
         Merge,
+        Pop,
+        Push,
         Reduce,
-        Sum;
+        Shift,
+        Sum,
+        Unshift;
 
     /**
      * @var array

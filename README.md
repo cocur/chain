@@ -36,7 +36,6 @@ $chain = Chain::fill(0, 10, 20)
 Take a look at the following code. How long do you need to understand it?
 
 ```php
-
 echo array_sum(array_intersect(
     array_diff([1, 2, 3, 4, 5], [0, 1, 9]),
     array_filter([2, 3, 4], function ($v) { return !($v & 1); })
@@ -102,6 +101,8 @@ instead of the array.
 - `->intersectKey(array|chain)`
 - `->map(callable)`
 - `->merge(array|chain)`
+- `->push(mixed)`
+- `->unshift(mixed)`
 
 ### Array Access
 
@@ -130,5 +131,7 @@ $chain->reduce(function ($current, $value) {
 #### List of Array Manipulation Methods
 
 - `->count()`
+- `->pop()`
 - `->reduce(callable[, int])`
+- `->shift()`
 - `->sum()`
