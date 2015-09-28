@@ -106,7 +106,7 @@ instead of the array.
 
 ### Array Access
 
-Most importantly you can access the underlying array using the public `chain` property.
+Most importantly you can access the underlying array using the public `array` property.
 
 ```php
 $chain = new Chain([1, 2, 3]);
