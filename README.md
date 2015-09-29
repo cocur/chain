@@ -58,6 +58,16 @@ echo (new Chain([1, 2, 3, 4, 5]))
 *Hint: It takes the diff of two arrays, intersects it with a filtered array and sums it up.*
 
 
+Installation
+------------
+
+You can install Chain using [Composer](http://getcomposer.org):
+
+```shell
+$ composer require cocur/chain
+```
+
+
 Usage
 -----
 
