@@ -6,6 +6,7 @@ Chain
 [![Build Status](https://img.shields.io/travis/cocur/chain/master.svg?style=flat)](https://travis-ci.org/cocur/chain)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cocur/chain)
 
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
@@ -186,6 +187,17 @@ Vienna, Europe.
 
 > Chain is a project of [Cocur](http://cocur.co). You can contact us on Twitter:
 > [**@cocurco**](https://twitter.com/cocurco)
+
+
+Support
+-------
+
+If you need support you can ask on [Twitter](https://twitter.com/cocurco) (well, only if your question is short) or you
+can join our chat on Gitter.
+
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cocur/chain)
+
+In case you want to support the development of Chain you can [send me an Euro or two](https://paypal.me/florianec/2).
 
 
 License

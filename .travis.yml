@@ -23,3 +23,11 @@ script:
 
 after_script:
   - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
+
+notifications:
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/91d73f7b9b94d4f20d82
+    on_success: change
+    on_failure: always
+    on_start: never
