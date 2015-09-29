@@ -176,3 +176,20 @@ $chain->reduce(function ($current, $value) {
 - `->reduce(callable[, int])`
 - `->shift()`
 - `->sum()`
+
+
+Author
+------
+
+Chain has been developed by [Florian Eckerstorfer](https://florian.ec) ([Twitter](https://twitter.com/Florian_)) in
+Vienna, Europe.
+
+> Chain is a project of [Cocur](http://cocur.co). You can contact us on Twitter:
+> [**@cocurco**](https://twitter.com/cocurco)
+
+
+License
+-------
+
+The MIT license applies to Chain. For the full copyright and license information, please view the
+[LICENSE](https://github.com/cocur/vale/blob/master/LICENSE) file distributed with this source code.
