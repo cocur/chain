@@ -1,6 +1,7 @@
 {
     "name": "cocur/chain",
     "description": "Consistent and chainable array manipulation",
+    "license": "MIT",
     "autoload": {
         "psr-4": {"Cocur\\Chain\\": "src"}
     },
