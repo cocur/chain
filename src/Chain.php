@@ -19,10 +19,14 @@ use Cocur\Chain\Link\Pad;
 use Cocur\Chain\Link\Pop;
 use Cocur\Chain\Link\Product;
 use Cocur\Chain\Link\Push;
+use Cocur\Chain\Link\Rand;
 use Cocur\Chain\Link\Reduce;
+use Cocur\Chain\Link\Replace;
 use Cocur\Chain\Link\Reverse;
+use Cocur\Chain\Link\Search;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Shuffle;
+use Cocur\Chain\Link\Slice;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
@@ -53,10 +57,14 @@ class Chain implements ArrayAccess, IteratorAggregate
         Pop,
         Product,
         Push,
+        Rand,
         Reduce,
+        Replace,
         Reverse,
+        Search,
         Shift,
         Shuffle,
+        Slice,
         Sum,
         Unique,
         Unshift;

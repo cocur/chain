@@ -6,7 +6,6 @@ Chain
 [![Build Status](https://img.shields.io/travis/cocur/chain/master.svg?style=flat)](https://travis-ci.org/cocur/chain)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
-[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/cocur/chain)
 
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
