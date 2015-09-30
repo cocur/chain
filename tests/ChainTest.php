@@ -30,6 +30,8 @@ class ChainTest extends PHPUnit_Framework_TestCase
     {
         $c = new Chain();
 
+        $this->assertTrue(method_exists($c, 'changeKeyCase'));
+        $this->assertTrue(method_exists($c, 'combine'));
         $this->assertTrue(method_exists($c, 'count'));
         $this->assertTrue(method_exists($c, 'diff'));
         $this->assertTrue(method_exists($c, 'fill'));
@@ -53,6 +55,8 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'shift'));
         $this->assertTrue(method_exists($c, 'shuffle'));
         $this->assertTrue(method_exists($c, 'slice'));
+        $this->assertTrue(method_exists($c, 'sort'));
+        $this->assertTrue(method_exists($c, 'sortKeys'));
         $this->assertTrue(method_exists($c, 'sum'));
         $this->assertTrue(method_exists($c, 'unique'));
         $this->assertTrue(method_exists($c, 'unshift'));

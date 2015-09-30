@@ -4,6 +4,8 @@ namespace Cocur\Chain;
 
 use ArrayAccess;
 use ArrayIterator;
+use Cocur\Chain\Link\ChangeKeyCase;
+use Cocur\Chain\Link\Combine;
 use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
@@ -27,6 +29,8 @@ use Cocur\Chain\Link\Search;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Shuffle;
 use Cocur\Chain\Link\Slice;
+use Cocur\Chain\Link\Sort;
+use Cocur\Chain\Link\SortKeys;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
@@ -42,7 +46,9 @@ use Traversable;
  */
 class Chain implements ArrayAccess, IteratorAggregate
 {
-    use Count,
+    use ChangeKeyCase,
+        Combine,
+        Count,
         Diff,
         Filter,
         Fill,
@@ -65,6 +71,8 @@ class Chain implements ArrayAccess, IteratorAggregate
         Shift,
         Shuffle,
         Slice,
+        Sort,
+        SortKeys,
         Sum,
         Unique,
         Unshift;
@@ -83,7 +91,7 @@ class Chain implements ArrayAccess, IteratorAggregate
     }
 
     /**
-     * @return Traversable
+     * @return ArrayIterator
      */
     public function getIterator()
     {
