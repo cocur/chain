@@ -108,18 +108,28 @@ instead of the array.
 
 #### List of Array Manipulation Methods
 
+- `->changeKeyCase()`
+- `->combine(array|Chain, array|Chain)`
+- `->count()`
 - `->diff(array|Chain)`
 - `->filter(callable)`
 - `->flip()`
-- `->intersect(array|chain)`
-- `->intersectAssoc(array|chain)`
-- `->intersectKey(array|chain)`
+- `->intersect(array|Chain)`
+- `->intersectAssoc(array|Chain)`
+- `->intersectKey(array|Chain)`
 - `->map(callable)`
-- `->merge(array|chain)`
+- `->merge(array|Chain)`
 - `->pad(int, mixed)`
+- `->pop()`
+- `->product()`
 - `->push(mixed)`
+- `->reduce(callable[, int])`
 - `->reverse([bool])`
+- `->shift()`
 - `->shuffle()`
+- `->sort(sortFlags)`
+- `->sortKeys(sortFlags)`
+- `->sum()`
 - `->unique()`
 - `->unshift(mixed)`
 
@@ -166,17 +176,6 @@ $chain->reduce(function ($current, $value) {
     return $current * $value;
 }, 1); // -> 6
 ```
-
-
-#### List of Array Manipulation Methods
-
-- `->count()`
-- `->pop()`
-- `->product()`
-- `->reduce(callable[, int])`
-- `->shift()`
-- `->sum()`
-
 
 Author
 ------
