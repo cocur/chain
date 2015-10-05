@@ -37,7 +37,7 @@ class DiffTest extends PHPUnit_Framework_TestCase
         /** @var \Cocur\Chain\Link\Diff $mock */
         $mock = $this->getMockForTrait('Cocur\Chain\Link\Diff');
         $mock->array = [0, 1, 2];
-        $mock->diff(new Chain([1, 2, 3]));
+        $mock->diff(Chain::create([1, 2, 3]));
 
         $this->assertEquals([0], $mock->array);
     }

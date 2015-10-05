@@ -37,7 +37,7 @@ class MergeTest extends PHPUnit_Framework_TestCase
         /** @var \Cocur\Chain\Link\Merge $mock */
         $mock = $this->getMockForTrait('Cocur\Chain\Link\Merge');
         $mock->array = [0, 1, 2];
-        $mock->merge(new Chain([3, 4]));
+        $mock->merge(Chain::create([3, 4]));
 
         $this->assertEquals([0, 1, 2, 3, 4], $mock->array);
     }
