@@ -15,13 +15,17 @@ trait SortKeys
     /**
      * Sort a Chain by its keys.
      **
-     * @param int $sortFlags
+     * @param int|callable $options
      *
      * @return Chain
      */
-    public function sortKeys($sortFlags = SORT_REGULAR)
+    public function sortKeys($options = SORT_REGULAR)
     {
-        ksort($this->array, $sortFlags);
+        if ($options && is_callable($options)) {
+            uksort($this->array, $options);
+        } else {
+            ksort($this->array, $options);
+        }
 
         return $this;
     }

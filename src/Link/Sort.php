@@ -15,13 +15,17 @@ trait Sort
     /**
      * Sort a Chain
      **
-     * @param int $sortFlags
+     * @param int|callable $options
      *
      * @return Chain
      */
-    public function sort($sortFlags = SORT_REGULAR)
+    public function sort($options = SORT_REGULAR)
     {
-        sort($this->array, $sortFlags);
+        if ($options && is_callable($options)) {
+            usort($this->array, $options);
+        } else {
+            sort($this->array, $options);
+        }
 
         return $this;
     }

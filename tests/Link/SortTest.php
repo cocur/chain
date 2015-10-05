@@ -23,7 +23,7 @@ class SortTest extends PHPUnit_Framework_TestCase
         $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->assertEquals(['apple', 'banana', 'lemon', 'orange'], $mock->sort()->array);
+        $this->assertSame(['apple', 'banana', 'lemon', 'orange'], $mock->sort()->array);
     }
 
     /**
@@ -36,6 +36,25 @@ class SortTest extends PHPUnit_Framework_TestCase
         $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
         $mock->array = ['111', '21', '112', '22'];
 
-        $this->assertEquals(['21', '22', '111', '112'], $mock->sort(SORT_NUMERIC)->array);
+        $this->assertSame(['21', '22', '111', '112'], $mock->sort(SORT_NUMERIC)->array);
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     */
+    public function sortWithFunction()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['kiwi', 'banana', 'apple'];
+
+        // sort by strlen
+        $this->assertSame(['kiwi', 'apple', 'banana'], $mock->sort(function ($a, $b) {
+            $a = strlen($a);
+            $b = strlen($b);
+
+            return $a === $b ? 0 : ($a < $b ? -1 : 1);
+        })->array);
     }
 }
