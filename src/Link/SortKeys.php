@@ -9,24 +9,39 @@ use Cocur\Chain\Chain;
  *
  * @package     Cocur\Chain\Link
  * @author      Christoph Rosse
+ * @author      Florian Eckerstorfer <florian@eckerstorfer.co>
  */
 trait SortKeys
 {
     /**
      * Sort a Chain by its keys.
      **
-     * @param int|callable $options
+     * @param int|callable $sortBy
+     * @param array        $options
      *
      * @return Chain
      */
-    public function sortKeys($options = SORT_REGULAR)
+    public function sortKeys($sortBy = SORT_REGULAR, array $options = [])
     {
-        if ($options && is_callable($options)) {
-            uksort($this->array, $options);
+        if ($sortBy && is_callable($sortBy)) {
+            uksort($this->array, $sortBy);
         } else {
-            ksort($this->array, $options);
+            $this->sortKeysWithFlags($sortBy, $options);
         }
 
         return $this;
+    }
+
+    /**
+     * @param int   $sortFlags
+     * @param array $options
+     */
+    private function sortKeysWithFlags($sortFlags = SORT_REGULAR, array $options = [])
+    {
+        if (!empty($options['reverse'])) {
+            krsort($this->array, $sortFlags);
+        } else {
+            ksort($this->array, $sortFlags);
+        }
     }
 }

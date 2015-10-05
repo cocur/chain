@@ -5,28 +5,63 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * Class Sort
+ * Sort
  *
  * @package     Cocur\Chain\Link
  * @author      Christoph Rosse
+ * @author      Florian Eckerstorfer <florian@eckerstorfer.co>
  */
 trait Sort
 {
     /**
      * Sort a Chain
      **
-     * @param int|callable $options
+     * @param int|callable $sortBy
+     * @param array        $options
      *
      * @return Chain
      */
-    public function sort($options = SORT_REGULAR)
+    public function sort($sortBy = SORT_REGULAR, array $options = [])
     {
-        if ($options && is_callable($options)) {
-            usort($this->array, $options);
+        if (!$sortBy) {
+            $sortBy = SORT_REGULAR;
+        }
+        if ($sortBy && is_callable($sortBy)) {
+            $this->sortWithCallback($sortBy, $options);
         } else {
-            sort($this->array, $options);
+            $this->sortWithFlags($sortBy, $options);
         }
 
         return $this;
+    }
+
+    /**
+     * @param callable $callback
+     * @param array    $options
+     */
+    private function sortWithCallback(callable $callback, array $options = [])
+    {
+        if (isset($options['assoc']) && $options['assoc']) {
+            uasort($this->array, $callback);
+        } else {
+            usort($this->array, $callback);
+        }
+    }
+
+    /**
+     * @param int   $sortFlags
+     * @param array $options
+     */
+    private function sortWithFlags($sortFlags = SORT_REGULAR, array $options = [])
+    {
+        if (!empty($options['assoc']) && !empty($options['reverse'])) {
+            arsort($this->array, $sortFlags);
+        } else if (!empty($options['assoc'])) {
+            asort($this->array, $sortFlags);
+        } else if (!empty($options['reverse'])) {
+            rsort($this->array, $sortFlags);
+        } else {
+            sort($this->array, $sortFlags);
+        }
     }
 }
