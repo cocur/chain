@@ -80,7 +80,7 @@ class Chain implements ArrayAccess, IteratorAggregate
     /**
      * @var array
      */
-    public $array;
+    public $array = [];
 
     /**
      * @param array $array
@@ -89,7 +89,7 @@ class Chain implements ArrayAccess, IteratorAggregate
      */
     public static function create(array $array = [])
     {
-        $chain = new self();
+        $chain = new static();
         $chain->array = $array;
 
         return $chain;
