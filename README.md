@@ -4,8 +4,10 @@ Chain
 > Chain provides you with a consistent and chainable way to work with arrays in PHP.
 
 [![Build Status](https://img.shields.io/travis/cocur/chain/master.svg?style=flat)](https://travis-ci.org/cocur/chain)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/vyfgsqsrx98w8d8n?svg=true)](https://ci.appveyor.com/project/florianeckerstorfer/chain)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
+[![StyleCI](https://styleci.io/repos/43258211/shield)](https://styleci.io/repos/43258211)
 
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 

@@ -1,0 +1,9 @@
+preset: symfony
+
+enabled:
+    - align_double_arrow
+    - align_equals
+
+disabled:
+    - unalign_double_arrow
+    - unalign_equals
