@@ -80,14 +80,19 @@ class Chain implements ArrayAccess, IteratorAggregate
     /**
      * @var array
      */
-    public $array;
+    public $array = [];
 
     /**
      * @param array $array
+     *
+     * @return Chain
      */
-    public function __construct(array $array = [])
+    public static function create(array $array = [])
     {
-        $this->array = $array;
+        $chain = new static();
+        $chain->array = $array;
+
+        return $chain;
     }
 
     /**

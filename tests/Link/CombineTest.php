@@ -23,8 +23,8 @@ class CombineTest extends PHPUnit_Framework_TestCase
         /** @var \Cocur\Chain\Link\Combine $mock */
         $mock = $this->getMockForTrait('Cocur\Chain\Link\Combine');
 
-        $keys   = new Chain(['foo', 'bar']);
-        $values = new Chain([42, 43]);
+        $keys   = Chain::create(['foo', 'bar']);
+        $values = Chain::create([42, 43]);
 
         $this->assertEquals(['foo' => 42, 'bar' => 43], $mock->combine($keys, $values)->array);
     }

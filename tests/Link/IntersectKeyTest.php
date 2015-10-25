@@ -38,7 +38,7 @@ class IntersectKeyTest extends PHPUnit_Framework_TestCase
         /** @var \Cocur\Chain\Link\IntersectKey $mock */
         $mock = $this->getMockForTrait('Cocur\Chain\Link\IntersectKey');
         $mock->array = ['a' => 1, 'b' => 2, 'c' => 3];
-        $mock->intersectKey(new Chain(['a' => 3, 'b' => 4, 'd' => 5]));
+        $mock->intersectKey(Chain::create(['a' => 3, 'b' => 4, 'd' => 5]));
 
         $this->assertEquals(['a' => 1, 'b' => 2], $mock->array);
     }

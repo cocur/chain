@@ -40,7 +40,7 @@ class IntersectAssocTest extends PHPUnit_Framework_TestCase
         /** @var \Cocur\Chain\Link\IntersectAssoc $mock */
         $mock = $this->getMockForTrait('Cocur\Chain\Link\IntersectAssoc');
         $mock->array = [1, 2, 3];
-        $mock->intersectAssoc(new Chain([3, 2, 1]));
+        $mock->intersectAssoc(Chain::create([3, 2, 1]));
 
         $this->assertContains(2, $mock->array);
         $this->assertNotContains(1, $mock->array);

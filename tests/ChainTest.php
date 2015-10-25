@@ -16,11 +16,11 @@ class ChainTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Chain::__construct()
+     * @covers Cocur\Chain\Chain::create()
      */
-    public function constructorCreatesChain()
+    public function createCreatesChain()
     {
-        $this->assertEquals([1, 2, 3], (new Chain([1, 2, 3]))->array);
+        $this->assertEquals([1, 2, 3], Chain::create([1, 2, 3])->array);
     }
 
     /**
@@ -69,7 +69,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
     public function chainIsTraversable()
     {
         $data = ['a', 'b'];
-        $c = new Chain($data);
+        $c = Chain::create($data);
 
         $this->assertInstanceOf('\Traversable', $c);
 
@@ -87,7 +87,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
      */
     public function chainAllowsArrayAccess()
     {
-        $c = new Chain();
+        $c = Chain::create();
 
         $this->assertFalse(isset($c[0]));
         $c[0] = 'foo';
