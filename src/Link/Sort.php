@@ -13,7 +13,7 @@ use Cocur\Chain\Chain;
 trait Sort
 {
     /**
-     * Sort a Chain
+     * Sort a Chain.
      *
      * @param int|callable $sortBy
      * @param array        $options
@@ -55,13 +55,12 @@ trait Sort
     {
         if (!empty($options['assoc']) && !empty($options['reverse'])) {
             arsort($this->array, $sortFlags);
-        } else if (!empty($options['assoc'])) {
+        } elseif (!empty($options['assoc'])) {
             asort($this->array, $sortFlags);
-        } else if (!empty($options['reverse'])) {
+        } elseif (!empty($options['reverse'])) {
             rsort($this->array, $sortFlags);
         } else {
             sort($this->array, $sortFlags);
         }
     }
 }
-
