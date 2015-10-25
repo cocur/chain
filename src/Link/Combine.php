@@ -5,15 +5,14 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * Class ChangeKeyCase
+ * Class ChangeKeyCase.
  *
- * @package     Cocur\Chain\Link
  * @author      Christoph Rosse
  */
 trait Combine
 {
     /**
-     * Creates an Chain by using one Chain for keys and another for its values
+     * Creates an Chain by using one Chain for keys and another for its values.
      *
      * @param Chain|array $keys
      * @param Chain|array $values

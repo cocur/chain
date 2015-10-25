@@ -3,9 +3,8 @@
 namespace Cocur\Chain\Link;
 
 /**
- * Slice
+ * Slice.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */

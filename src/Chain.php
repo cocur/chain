@@ -35,12 +35,10 @@ use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
 use IteratorAggregate;
-use Traversable;
 
 /**
- * Chain
+ * Chain.
  *
- * @package   Cocur\Chain
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
@@ -89,7 +87,7 @@ class Chain implements ArrayAccess, IteratorAggregate
      */
     public static function create(array $array = [])
     {
-        $chain = new static();
+        $chain        = new static();
         $chain->array = $array;
 
         return $chain;
@@ -106,7 +104,7 @@ class Chain implements ArrayAccess, IteratorAggregate
     /**
      * @param mixed $offset
      *
-     * @return boolean
+     * @return bool
      */
     public function offsetExists($offset)
     {
@@ -126,8 +124,6 @@ class Chain implements ArrayAccess, IteratorAggregate
     /**
      * @param mixed $offset
      * @param mixed $value
-     *
-     * @return void
      */
     public function offsetSet($offset, $value)
     {
@@ -136,8 +132,6 @@ class Chain implements ArrayAccess, IteratorAggregate
 
     /**
      * @param mixed $offset
-     *
-     * @return void
      */
     public function offsetUnset($offset)
     {

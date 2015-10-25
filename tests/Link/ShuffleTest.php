@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ShuffleTest
+ * ShuffleTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class ShuffleTest extends PHPUnit_Framework_TestCase
     public function shuffleRandomizesChain()
     {
         /** @var \Cocur\Chain\Link\Shuffle $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Shuffle');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Shuffle');
         $mock->array = [0, 1, 3, 4, 5, 6, 7, 8, 9];
         $mock->shuffle();
 

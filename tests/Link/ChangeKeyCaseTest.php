@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * CountTest
+ * CountTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Christoph Rosse
  * @group     unit
  */
@@ -20,7 +19,7 @@ class ChangeKeyCaseTest extends PHPUnit_Framework_TestCase
     public function changeKeyCaseDefaultsToLower()
     {
         /** @var \Cocur\Chain\Link\ChangeKeyCase $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\ChangeKeyCase');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\ChangeKeyCase');
         $mock->array = ['FoO' => 1, 'BAR' => 2];
 
         $this->assertEquals(['foo' => 1, 'bar' => 2], $mock->changeKeyCase()->array);
@@ -33,7 +32,7 @@ class ChangeKeyCaseTest extends PHPUnit_Framework_TestCase
     public function changeKeyCaseUsesGivenCase()
     {
         /** @var \Cocur\Chain\Link\ChangeKeyCase $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\ChangeKeyCase');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\ChangeKeyCase');
         $mock->array = ['FoO' => 1, 'bar' => 2];
 
         $this->assertEquals(['FOO' => 1, 'BAR' => 2], $mock->changeKeyCase(CASE_UPPER)->array);

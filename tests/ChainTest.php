@@ -5,9 +5,8 @@ namespace Cocur\Chain;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ChainTest
+ * ChainTest.
  *
- * @package   Cocur\Chain
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -69,11 +68,11 @@ class ChainTest extends PHPUnit_Framework_TestCase
     public function chainIsTraversable()
     {
         $data = ['a', 'b'];
-        $c = Chain::create($data);
+        $c    = Chain::create($data);
 
         $this->assertInstanceOf('\Traversable', $c);
 
-        foreach($c as $key => $value) {
+        foreach ($c as $key => $value) {
             $this->assertEquals($data[$key], $value);
         }
     }

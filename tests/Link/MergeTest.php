@@ -6,9 +6,8 @@ use Cocur\Chain\Chain;
 use PHPUnit_Framework_TestCase;
 
 /**
- * MergeTest
+ * MergeTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
@@ -21,7 +20,7 @@ class MergeTest extends PHPUnit_Framework_TestCase
     public function mergeMergesArray()
     {
         /** @var \Cocur\Chain\Link\Merge $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Merge');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Merge');
         $mock->array = [0, 1, 2];
         $mock->merge([3, 4]);
 
@@ -35,7 +34,7 @@ class MergeTest extends PHPUnit_Framework_TestCase
     public function mergeMergesChain()
     {
         /** @var \Cocur\Chain\Link\Merge $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Merge');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Merge');
         $mock->array = [0, 1, 2];
         $mock->merge(Chain::create([3, 4]));
 

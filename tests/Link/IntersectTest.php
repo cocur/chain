@@ -6,9 +6,8 @@ use Cocur\Chain\Chain;
 use PHPUnit_Framework_TestCase;
 
 /**
- * IntersectTest
+ * IntersectTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
@@ -21,7 +20,7 @@ class IntersectTest extends PHPUnit_Framework_TestCase
     public function intersectIntersectsWithArray()
     {
         /** @var \Cocur\Chain\Link\Intersect $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Intersect');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Intersect');
         $mock->array = [1, 2, 3];
         $mock->intersect([3, 4, 5]);
 
@@ -37,7 +36,7 @@ class IntersectTest extends PHPUnit_Framework_TestCase
     public function intersectIntersectsWithChain()
     {
         /** @var \Cocur\Chain\Link\Intersect $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Intersect');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Intersect');
         $mock->array = [1, 2, 3];
         $mock->intersect(Chain::create([3, 4, 5]));
 

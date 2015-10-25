@@ -5,16 +5,14 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * MapTest
+ * MapTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
  */
 class MapTest extends PHPUnit_Framework_TestCase
 {
-
     /**
      * @test
      * @covers Cocur\Chain\Link\Map::map()
@@ -22,7 +20,7 @@ class MapTest extends PHPUnit_Framework_TestCase
     public function mapAppliesMapToArray()
     {
         /** @var \Cocur\Chain\Link\Map $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Map');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Map');
         $mock->array = ['foobar', 'bar'];
         $mock->map(function ($v) { return str_replace('bar', 'foo', $v); });
 

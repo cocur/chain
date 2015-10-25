@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * SortTest
+ * SortTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Christoph Rosse
  * @group     unit
  */

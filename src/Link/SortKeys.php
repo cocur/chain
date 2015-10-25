@@ -5,16 +5,16 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * Class SortKeys
+ * Class SortKeys.
  *
- * @package     Cocur\Chain\Link
  * @author      Christoph Rosse
  */
 trait SortKeys
 {
     /**
      * Sort a Chain by its keys.
-     **
+     **.
+     *
      * @param int $sortFlags
      *
      * @return Chain
