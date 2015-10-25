@@ -8,6 +8,7 @@ use PHPUnit_Framework_TestCase;
  * SortTest.
  *
  * @author    Christoph Rosse
+ * @author    Florian Eckerstorfer <florian@eckerstorfer.co>
  * @group     unit
  */
 class SortTest extends PHPUnit_Framework_TestCase
@@ -15,6 +16,7 @@ class SortTest extends PHPUnit_Framework_TestCase
     /**
      * @test
      * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithDefaultSorting()
     {
@@ -22,12 +24,13 @@ class SortTest extends PHPUnit_Framework_TestCase
         $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->assertEquals(['apple', 'banana', 'lemon', 'orange'], $mock->sort()->array);
+        $this->assertSame(['apple', 'banana', 'lemon', 'orange'], $mock->sort()->array);
     }
 
     /**
      * @test
      * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithAlternativeSortingAlgorithm()
     {
@@ -35,6 +38,97 @@ class SortTest extends PHPUnit_Framework_TestCase
         $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
         $mock->array = ['111', '21', '112', '22'];
 
-        $this->assertEquals(['21', '22', '111', '112'], $mock->sort(SORT_NUMERIC)->array);
+        $this->assertSame(['21', '22', '111', '112'], $mock->sort(SORT_NUMERIC)->array);
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     */
+    public function sortWithDefaultSortingAndAssocOption()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['lemon', 'orange', 'banana', 'apple'];
+
+        $this->assertSame(
+            [3 => 'apple', 2 => 'banana', 0 => 'lemon', 1 => 'orange'],
+            $mock->sort(null, ['assoc' => true])->array
+        );
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     */
+    public function sortWithDefaultSortingAndReverseOption()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['lemon', 'orange', 'banana', 'apple'];
+
+        $this->assertSame(
+            ['orange', 'lemon', 'banana', 'apple'],
+            $mock->sort(null, ['reverse' => true])->array
+        );
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     */
+    public function sortWithDefaultSortingAndAssocAndReverseOption()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['lemon', 'orange', 'banana', 'apple'];
+
+        $this->assertSame(
+            [1 => 'orange', 0 => 'lemon', 2 => 'banana', 3 => 'apple'],
+            $mock->sort(null, ['assoc' => true, 'reverse' => true])->array
+        );
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithCallback()
+     */
+    public function sortWithFunction()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['kiwi', 'banana', 'apple'];
+
+        // sort by strlen
+        $this->assertSame(['kiwi', 'apple', 'banana'], $mock->sort(function ($a, $b) {
+            $a = strlen($a);
+            $b = strlen($b);
+
+            return $a === $b ? 0 : ($a < $b ? -1 : 1);
+        })->array);
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithCallback()
+     */
+    public function sortWithFunctionAndAssocOption()
+    {
+        /** @var \Cocur\Chain\Link\Sort $mock */
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['kiwi', 'banana', 'apple'];
+
+        // sort by strlen
+        $this->assertSame([0 => 'kiwi', 2 => 'apple', 1 => 'banana'], $mock->sort(function ($a, $b) {
+            $a = strlen($a);
+            $b = strlen($b);
+
+            return $a === $b ? 0 : ($a < $b ? -1 : 1);
+        }, ['assoc' => true])->array);
     }
 }
