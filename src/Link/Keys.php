@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * Keys
+ * Keys.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */

@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * FilterTest
+ * FilterTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class FilterTest extends PHPUnit_Framework_TestCase
     public function filterFiltersArray()
     {
         /** @var \Cocur\Chain\Link\Filter $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Filter');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Filter');
         $mock->array = [0, 1, 2, 3];
         $mock->filter(function ($v) { return $v & 1; });
 

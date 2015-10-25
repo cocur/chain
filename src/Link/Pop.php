@@ -3,9 +3,8 @@
 namespace Cocur\Chain\Link;
 
 /**
- * Pop
+ * Pop.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */

@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * FillTest
+ * FillTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit

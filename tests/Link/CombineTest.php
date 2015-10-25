@@ -6,9 +6,8 @@ use Cocur\Chain\Chain;
 use PHPUnit_Framework_TestCase;
 
 /**
- * CombineTest
+ * CombineTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Christoph Rosse
  * @group     unit
  */

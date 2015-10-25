@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * Class ChangeKeyCase
+ * Class ChangeKeyCase.
  *
- * @package     Cocur\Chain\Link
  * @author      Christoph Rosse
  */
 trait ChangeKeyCase

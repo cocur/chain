@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * UnshiftTest
+ * UnshiftTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class UnshiftTest extends PHPUnit_Framework_TestCase
     public function unshiftPrependsElement()
     {
         /** @var \Cocur\Chain\Link\Unshift $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Unshift');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Unshift');
         $mock->array = [1];
         $mock->unshift(0);
 

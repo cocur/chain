@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ReverseTest
+ * ReverseTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class ReverseTest extends PHPUnit_Framework_TestCase
     public function reverseReversesTheChain()
     {
         /** @var \Cocur\Chain\Link\Reverse $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Reverse');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Reverse');
         $mock->array = [0, 1];
         $mock->reverse();
 

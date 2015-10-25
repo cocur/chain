@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * PushTest
+ * PushTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class PushTest extends PHPUnit_Framework_TestCase
     public function pushPushesElementOntoTheEnd()
     {
         /** @var \Cocur\Chain\Link\Push $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Push');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Push');
         $mock->array = [0];
         $mock->push(1);
 

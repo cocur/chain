@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * FlipTest
+ * FlipTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class FlipTest extends PHPUnit_Framework_TestCase
     public function flipExchangesKeysAndValues()
     {
         /** @var \Cocur\Chain\Link\Flip $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Flip');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Flip');
         $mock->array = ['foo', 'bar'];
         $mock->flip();
 

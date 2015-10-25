@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ProductTest
+ * ProductTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class ProductTest extends PHPUnit_Framework_TestCase
     public function productMultipliesElements()
     {
         /** @var \Cocur\Chain\Link\Product $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Product');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Product');
         $mock->array = [2, 3];
 
         $this->assertEquals(6, $mock->product());

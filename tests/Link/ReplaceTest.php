@@ -5,9 +5,8 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * ReplaceTest
+ * ReplaceTest.
  *
- * @package   Cocur\Chain\Link
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
@@ -21,7 +20,7 @@ class ReplaceTest extends PHPUnit_Framework_TestCase
     public function replaceReplacesValuesInArray()
     {
         /** @var \Cocur\Chain\Link\Replace $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Replace');
+        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Replace');
         $mock->array = [0, 1, 2, 3, 4];
         $mock->replace([1 => 42, 3 => 69]);
 
