@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain;
 
-use ArrayAccess;
-use ArrayIterator;
 use Cocur\Chain\Link\ChangeKeyCase;
 use Cocur\Chain\Link\Combine;
 use Cocur\Chain\Link\Count;
@@ -34,7 +32,6 @@ use Cocur\Chain\Link\SortKeys;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
-use IteratorAggregate;
 
 /**
  * Chain.

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Cocur\Chain;
 use ArrayAccess;
 use ArrayIterator;
