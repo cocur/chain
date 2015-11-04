@@ -63,7 +63,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::getIterator()
+     * @covers Cocur\Chain\AbstractChain::getIterator()
      */
     public function chainIsTraversable()
     {
@@ -79,10 +79,10 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::offsetExists()
-     * @covers Cocur\Chain\Chain::offsetGet()
-     * @covers Cocur\Chain\Chain::offsetSet()
-     * @covers Cocur\Chain\Chain::offsetUnset()
+     * @covers Cocur\Chain\AbstractChain::offsetExists()
+     * @covers Cocur\Chain\AbstractChain::offsetGet()
+     * @covers Cocur\Chain\AbstractChain::offsetSet()
+     * @covers Cocur\Chain\AbstractChain::offsetUnset()
      */
     public function chainAllowsArrayAccess()
     {
