@@ -42,7 +42,7 @@ use IteratorAggregate;
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
-class Chain implements ArrayAccess, IteratorAggregate
+class Chain extends AbstractChain
 {
     use ChangeKeyCase,
         Combine,
@@ -76,11 +76,6 @@ class Chain implements ArrayAccess, IteratorAggregate
         Unshift;
 
     /**
-     * @var array
-     */
-    public $array = [];
-
-    /**
      * @param array $array
      *
      * @return Chain
@@ -91,50 +86,5 @@ class Chain implements ArrayAccess, IteratorAggregate
         $chain->array = $array;
 
         return $chain;
-    }
-
-    /**
-     * @return ArrayIterator
-     */
-    public function getIterator()
-    {
-        return new ArrayIterator($this->array);
-    }
-
-    /**
-     * @param mixed $offset
-     *
-     * @return bool
-     */
-    public function offsetExists($offset)
-    {
-        return isset($this->array[$offset]);
-    }
-
-    /**
-     * @param mixed $offset
-     *
-     * @return mixed
-     */
-    public function offsetGet($offset)
-    {
-        return $this->array[$offset];
-    }
-
-    /**
-     * @param mixed $offset
-     * @param mixed $value
-     */
-    public function offsetSet($offset, $value)
-    {
-        $this->array[$offset] = $value;
-    }
-
-    /**
-     * @param mixed $offset
-     */
-    public function offsetUnset($offset)
-    {
-        unset($this->array[$offset]);
     }
 }
