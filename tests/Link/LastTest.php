@@ -5,7 +5,7 @@ namespace Cocur\Chain\Link;
 use PHPUnit_Framework_TestCase;
 
 /**
- * LastTest
+ * LastTest.
  *
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
