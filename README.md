@@ -203,7 +203,15 @@ In case you want to support the development of Chain you can [send me an Euro or
 Change Log
 ----------
 
-### Version 0.3 (6 November 2015)
+### Version 0.2 (6 November 2015)
+
+- [#11](https://github.com/cocur/chain/pull/11) Add `Cocur\Chain\Chain::createFromString()` to create a chain from a
+string
+- [#10](https://github.com/cocur/chain/pull/10) Add methods to `Cocur\Chain\AbstractChain` to retrieve first and last
+element of chain.
+- [#9](https://github.com/cocur/chain/pull/9) `Cocur\Chain\Chain` is now countable
+
+### Version 0.1 (6 November 2015)
 
 - *Initial release*
 
