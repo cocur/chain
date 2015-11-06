@@ -63,4 +63,26 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate
     {
         unset($this->array[$offset]);
     }
+
+    /**
+     * @return mixed First element of the array or `false` if the array is empty
+     */
+    public function first()
+    {
+        // To not change the internal array pointer we invoke reset() in a closure
+        $reset = function ($array) { return reset($array); };
+
+        return $reset($this->array);
+    }
+
+    /**
+     * @return mixed Last element of the array or `false` if the array is empty
+     */
+    public function last()
+    {
+        // To not change the internal array pointer we invoke end() in a closure
+        $end = function ($array) { return end($array); };
+
+        return $end($this->array);
+    }
 }
