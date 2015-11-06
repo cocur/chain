@@ -88,7 +88,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
     public function chainIsTraversable()
     {
         $data = ['a', 'b'];
-        $c    = Chain::creagit ate($data);
+        $c    = Chain::create($data);
 
         $this->assertInstanceOf('\Traversable', $c);
 
