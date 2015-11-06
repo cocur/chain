@@ -53,11 +53,13 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'diff'));
         $this->assertTrue(method_exists($c, 'fill'));
         $this->assertTrue(method_exists($c, 'filter'));
+        $this->assertTrue(method_exists($c, 'first'));
         $this->assertTrue(method_exists($c, 'flip'));
         $this->assertTrue(method_exists($c, 'intersect'));
         $this->assertTrue(method_exists($c, 'intersectAssoc'));
         $this->assertTrue(method_exists($c, 'intersectKey'));
         $this->assertTrue(method_exists($c, 'keys'));
+        $this->assertTrue(method_exists($c, 'last'));
         $this->assertTrue(method_exists($c, 'map'));
         $this->assertTrue(method_exists($c, 'merge'));
         $this->assertTrue(method_exists($c, 'pad'));
@@ -86,7 +88,7 @@ class ChainTest extends PHPUnit_Framework_TestCase
     public function chainIsTraversable()
     {
         $data = ['a', 'b'];
-        $c    = Chain::create($data);
+        $c    = Chain::creagit ate($data);
 
         $this->assertInstanceOf('\Traversable', $c);
 
@@ -124,27 +126,5 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
         $this->assertInstanceOf('\Countable', $c);
         $this->assertEquals(3, count($c));
-    }
-
-    /**
-     * @test
-     * @covers Cocur\Chain\AbstractChain::first()
-     */
-    public function firstReturnsFirstElement()
-    {
-        $c = Chain::create([0, 1, 2]);
-
-        $this->assertEquals(0, $c->first());
-    }
-
-    /**
-     * @test
-     * @covers Cocur\Chain\AbstractChain::last()
-     */
-    public function lastReturnsLastElement()
-    {
-        $c = Chain::create([0, 1, 2]);
-
-        $this->assertEquals(2, $c->last());
     }
 }

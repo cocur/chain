@@ -8,11 +8,13 @@ use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
+use Cocur\Chain\Link\First;
 use Cocur\Chain\Link\Flip;
 use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
 use Cocur\Chain\Link\Keys;
+use Cocur\Chain\Link\Last;
 use Cocur\Chain\Link\Map;
 use Cocur\Chain\Link\Merge;
 use Cocur\Chain\Link\Pad;
@@ -48,11 +50,13 @@ class Chain extends AbstractChain implements Countable
         Diff,
         Filter,
         Fill,
+        First,
         Flip,
         Intersect,
         IntersectAssoc,
         IntersectKey,
         Keys,
+        Last,
         Map,
         Merge,
         Pad,
