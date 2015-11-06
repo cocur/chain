@@ -200,6 +200,14 @@ can join our chat on Gitter.
 In case you want to support the development of Chain you can [send me an Euro or two](https://paypal.me/florianec/2).
 
 
+Change Log
+----------
+
+### Version 0.3 (6 November 2015)
+
+- *Initial release*
+
+
 License
 -------
 
