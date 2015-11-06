@@ -84,4 +84,26 @@ class Chain extends AbstractChain
 
         return $chain;
     }
+    
+    /**
+     * @param string $delimiter If the option `regexp` is `true` this must be a regular expression
+     * @param string $string
+     * @param array  $options   If the option `regexp` is `true` the string is split by using `preg_split()`, otherwise
+     *                          `explode()` is used.
+     *
+     * @return Chain
+     */
+    public static function createFromString($delimiter, $string, array $options = [])
+    {
+        $options = array_merge(['regexp' => false], $options);
+        $chain   = new static();
+
+        if ($options['regexp']) {
+            $chain->array = preg_split($delimiter, $string);
+        } else {
+            $chain->array = explode($delimiter, $string);
+        }
+
+        return $chain;
+    }
 }

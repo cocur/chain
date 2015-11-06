@@ -24,6 +24,24 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
+     * @covers Cocur\Chain\Chain::createFromString()
+     */
+    public function createCreatesChainBySplittingStringWithDelimiter()
+    {
+        $this->assertEquals([1, 2, 3], Chain::createFromString(',', '1,2,3')->array);
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Chain::createFromString()
+     */
+    public function createCreatesChainBySplittingStringWithRegExp()
+    {
+        $this->assertEquals([1, 2, 3, 4], Chain::createFromString('/[a-z]/', '1a2b3c4', ['regexp' => true])->array);
+    }
+
+    /**
+     * @test
      */
     public function chainHasTraits()
     {
@@ -95,4 +113,6 @@ class ChainTest extends PHPUnit_Framework_TestCase
         unset($c[0]);
         $this->assertFalse(isset($c[0]));
     }
+
+
 }
