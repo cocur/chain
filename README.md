@@ -90,12 +90,21 @@ function.
 $chain = Chain::fill(0, 10, 'foo');
 ```
 
+There is also a method, `::createFromString()`, that creates the Chain from a string. In addition to the string you
+need to provide a delimiter, which is used to split the string. If the option `regexp` is passed in the delimiter must
+be a regular expression.
+
+```php
+Chain::createFromString(',', '1,2,3')->array;           // -> [1, 2, 3]
+Chain::createFromString('/,|.|;/', '1,2.3;4,5')->array; // -> [1, 2, 3, 4, 5]
+```
+
 ### Array Manipulation
 
 Chains manipulation methods manipulate the underlying array and return the object, that is, they can be chained. Most
 of the methods are simple wrappers around the corresponding `array_` function.
 
-In the following example `->map()` is used to multply each element by `3` and then filter the array to only contain
+In the following example `->map()` is used to multiply each element by `3` and then filter the array to only contain
 odd elements.
 
 ```php
@@ -105,10 +114,13 @@ $chain = (new Chain([1, 2, 3]))
 $chain->array; // -> [3, 9]
 ```
 
-When a method accepts an array (`->diff()` or `->intersect()`) then you can pass in another instance of `Chain`
+When a method accepts an array (`->diff()` or `->intersect()`) you can also pass in another instance of `Chain`
 instead of the array.
 
 #### List of Array Manipulation Methods
+
+All of these methods manipulate the array, but not all of them return an instance of `Cocur\Chain\Chain`. For example,
+`->shift()` removes the first element from the array and returns it.
 
 - `->changeKeyCase()`
 - `->combine(array|Chain, array|Chain)`
@@ -172,12 +184,22 @@ not chainable.
 ```php
 $chain = new Chain([1, 2, 3]);
 $chain->count(); // -> 3
-$chain->sum(); // -> 6
+$chain->sum();   // -> 6
+$chain->first(); // -> 1
+$chain->last();  // -> 3
 
 $chain->reduce(function ($current, $value) {
     return $current * $value;
 }, 1); // -> 6
 ```
+
+### List of Array Access Methods
+
+- `->count()`
+- `->first()`
+- `->last()`
+- `->reduce()`
+- `->sum()`
 
 Author
 ------
