@@ -95,4 +95,26 @@ class ChainTest extends PHPUnit_Framework_TestCase
         unset($c[0]);
         $this->assertFalse(isset($c[0]));
     }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\AbstractChain::first()
+     */
+    public function firstReturnsFirstElement()
+    {
+        $c = Chain::create([0, 1, 2]);
+
+        $this->assertEquals(0, $c->first());
+    }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\AbstractChain::last()
+     */
+    public function lastReturnsLastElement()
+    {
+        $c = Chain::create([0, 1, 2]);
+
+        $this->assertEquals(2, $c->last());
+    }
 }
