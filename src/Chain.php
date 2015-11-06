@@ -84,7 +84,7 @@ class Chain extends AbstractChain
 
         return $chain;
     }
-    
+
     /**
      * @param string $delimiter If the option `regexp` is `true` this must be a regular expression
      * @param string $string

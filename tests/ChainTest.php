@@ -113,6 +113,4 @@ class ChainTest extends PHPUnit_Framework_TestCase
         unset($c[0]);
         $this->assertFalse(isset($c[0]));
     }
-
-
 }
