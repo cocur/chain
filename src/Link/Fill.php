@@ -13,7 +13,7 @@ use Cocur\Chain\Chain;
 trait Fill
 {
     /**
-     * Create a new Chain and fill with values
+     * Create a new Chain and fill with values.
      *
      * Creates a new Chain and fills the array with `num` entries of the value of `value` parameters, keys starting
      * at the `startIndex` parameter.

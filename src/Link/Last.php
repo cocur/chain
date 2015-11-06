@@ -3,7 +3,7 @@
 namespace Cocur\Chain\Link;
 
 /**
- * Last
+ * Last.
  *
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer

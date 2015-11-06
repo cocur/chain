@@ -3,7 +3,7 @@
 namespace Cocur\Chain\Link;
 
 /**
- * First
+ * First.
  *
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
@@ -11,7 +11,7 @@ namespace Cocur\Chain\Link;
 trait First
 {
     /**
-     * Returns the first element of the array
+     * Returns the first element of the array.
      *
      * @return mixed First element of the array or `false` if the array is empty.
      */

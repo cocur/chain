@@ -13,7 +13,7 @@ use Cocur\Chain\Chain;
 trait Filter
 {
     /**
-     * Filters elements of an array using a callback function
+     * Filters elements of an array using a callback function.
      *
      * Iterates over each value in the array passing them to the `callback` function. If the callback functions returns
      * true the current value from the array stays in the array, otherwise they are removed. Array keys are preserved.
