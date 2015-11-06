@@ -14,8 +14,9 @@ trait Combine
     /**
      * Creates an Chain by using one Chain for keys and another for its values.
      *
-     * @param Chain|array $keys
-     * @param Chain|array $values
+     * @param Chain|array $keys   Array or instance of `Cocur\Chain\Chain` of keys to be used. Illegal values for key
+     *                            will be converted to string.
+     * @param Chain|array $values Array or instance of `Cocur\Chain\Chain` of values to be used.
      *
      * @return Chain
      */

@@ -11,7 +11,9 @@ namespace Cocur\Chain\Link;
 trait First
 {
     /**
-     * @return mixed First element of the array or `false` if the array is empty
+     * Returns the first element of the array
+     *
+     * @return mixed First element of the array or `false` if the array is empty.
      */
     public function first()
     {

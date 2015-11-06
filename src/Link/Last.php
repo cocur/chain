@@ -11,6 +11,8 @@ namespace Cocur\Chain\Link;
 trait Last
 {
     /**
+     * Returns the last element of the array.
+     *
      * @return mixed Last element of the array or `false` if the array is empty
      */
     public function last()

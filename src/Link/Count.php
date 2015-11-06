@@ -11,7 +11,9 @@ namespace Cocur\Chain\Link;
 trait Count
 {
     /**
-     * @return int
+     * Counts all elements in the array.
+     *
+     * @return int Returns the number of elements in the array.
      */
     public function count()
     {

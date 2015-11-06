@@ -12,9 +12,11 @@ use Cocur\Chain\Chain;
 trait ChangeKeyCase
 {
     /**
-     * Changes the case of all keys in an array.
+     * Changes the case of all keys in an array
      *
-     * @param int $case
+     * Changes all keys from lowercased or uppercased. Numbered indices are left as is.
+     *
+     * @param int $case Either `CASE_UPPER` or `CASE_LOWER` (default).
      *
      * @return Chain
      */

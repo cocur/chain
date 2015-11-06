@@ -13,7 +13,12 @@ use Cocur\Chain\Chain;
 trait Diff
 {
     /**
-     * @param Chain|array $array2
+     * Computes the difference of arrays
+     *
+     * Compares the array to another array or instance of `Cocur\Chain\Chain` and will set the array of elements that
+     * are not present in the other array.
+     *
+     * @param Chain|array $array2 An array or instance of `Cocur\Chain\Chain` to compare against.
      *
      * @return Chain
      */
