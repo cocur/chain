@@ -95,8 +95,8 @@ need to provide a delimiter, which is used to split the string. If the option `r
 be a regular expression.
 
 ```php
-Chain::createFromString(',', '1,2,3')->array;           // -> [1, 2, 3]
-Chain::createFromString('/,|.|;/', '1,2.3;4,5')->array; // -> [1, 2, 3, 4, 5]
+Chain::createFromString(',', '1,2,3')->array;                               // -> [1, 2, 3]
+Chain::createFromString('/,|.|;/', '1,2.3;4,5', ['regexp' => true])->array; // -> [1, 2, 3, 4, 5]
 ```
 
 ### Array Manipulation
