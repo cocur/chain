@@ -98,6 +98,18 @@ class ChainTest extends PHPUnit_Framework_TestCase
 
     /**
      * @test
+     * @covers Cocur\Chain\Chain::count()
+     */
+    public function chainIsCountable()
+    {
+        $c = Chain::create([0, 1, 2]);
+
+        $this->assertInstanceOf('\Countable', $c);
+        $this->assertEquals(3, count($c));
+    }
+
+    /**
+     * @test
      * @covers Cocur\Chain\AbstractChain::first()
      */
     public function firstReturnsFirstElement()
