@@ -95,4 +95,16 @@ class ChainTest extends PHPUnit_Framework_TestCase
         unset($c[0]);
         $this->assertFalse(isset($c[0]));
     }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Chain::count()
+     */
+    public function chainIsCountable()
+    {
+        $c = Chain::create([0, 1, 2]);
+
+        $this->assertInstanceOf('\Countable', $c);
+        $this->assertEquals(3, count($c));
+    }
 }

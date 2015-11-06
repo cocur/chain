@@ -32,6 +32,7 @@ use Cocur\Chain\Link\SortKeys;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
+use Countable;
 
 /**
  * Chain.
@@ -39,7 +40,7 @@ use Cocur\Chain\Link\Unshift;
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
-class Chain extends AbstractChain
+class Chain extends AbstractChain implements Countable
 {
     use ChangeKeyCase,
         Combine,
