@@ -13,13 +13,24 @@ use Cocur\Chain\Chain;
 trait Merge
 {
     /**
-     * @param Chain|array $array
+     * Merge arrays.
+     *
+     * Merge the elements of one array with the elements of the array in the Chain.
+     *
+     * @param Chain|array $array   Array to merge with
+     * @param array       $options Options, including `recursive` to merge arrays recursive.
      *
      * @return Chain
      */
-    public function merge($array)
+    public function merge($array, array $options = [])
     {
-        $this->array = array_merge($this->array, $array instanceof Chain ? $array->array : $array);
+        $options = array_merge(['recursive' => false], $options);
+
+        if ($options['recursive']) {
+            $this->array = array_merge_recursive($this->array, $array instanceof Chain ? $array->array : $array);
+        } else {
+            $this->array = array_merge($this->array, $array instanceof Chain ? $array->array : $array);
+        }
 
         return $this;
     }

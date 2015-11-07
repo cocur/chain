@@ -143,6 +143,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->shuffle()`
 - `->sort(sortFlags)`
 - `->sortKeys(sortFlags)`
+- `->splice(offset[, length[, replacement]])`
 - `->sum()`
 - `->unique()`
 - `->unshift(mixed)`
@@ -196,6 +197,7 @@ $chain->reduce(function ($current, $value) {
 ### List of Array Access Methods
 
 - `->count()`
+- `->countValues()`
 - `->first()`
 - `->last()`
 - `->reduce()`
