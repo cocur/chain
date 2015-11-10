@@ -40,6 +40,7 @@ class MergeTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals([0, 1, 2, 3, 4], $mock->array);
     }
+
     /**
      * @test
      * @covers Cocur\Chain\Link\Merge::merge()
