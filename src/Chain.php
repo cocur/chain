@@ -79,15 +79,20 @@ class Chain extends AbstractChain implements Countable
 
     /**
      * @param array $array
+     */
+    public function __construct(array $array = [])
+    {
+        $this->array = $array;
+    }
+
+    /**
+     * @param array $array
      *
      * @return Chain
      */
     public static function create(array $array = [])
     {
-        $chain        = new static();
-        $chain->array = $array;
-
-        return $chain;
+        return new static($array);
     }
 
     /**
