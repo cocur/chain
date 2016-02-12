@@ -51,9 +51,9 @@ echo array_sum(array_intersect(
 What about this?
 
 ```php
-echo (new Chain([1, 2, 3, 4, 5]))
+echo Chain::create([1, 2, 3, 4, 5])
     ->diff([0, 1, 9])
-    ->intersect((new Chain([2, 3, 4]))->filter(function ($v) { return !($v & 1); }))
+    ->intersect(Chain::create([2, 3, 4])->filter(function ($v) { return !($v & 1); }))
     ->sum();
 ```
 
@@ -82,7 +82,11 @@ You can create a Chain by passing an array to the constructor.
 ```php
 $chain = new Chain([1, 2, 3]);
 ```
+Or with a convenient static method:
 
+```php
+$chain = Chain::create([1, 2, 3]);
+```
 In addition a Chain can also be created by the static `fill()` method, which is a wrapper for the `array_fill()`
 function.
 

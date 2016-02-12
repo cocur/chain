@@ -15,6 +15,15 @@ class ChainTest extends PHPUnit_Framework_TestCase
 {
     /**
      * @test
+     * @covers Cocur\Chain\Chain::__construct()
+     */
+    public function constructorCreatesChain()
+    {
+        $this->assertEquals([1, 2, 3], (new Chain([1, 2, 3]))->array);
+    }
+
+    /**
+     * @test
      * @covers Cocur\Chain\Chain::create()
      */
     public function createCreatesChain()
