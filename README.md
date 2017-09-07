@@ -231,9 +231,12 @@ In case you want to support the development of Chain you can [send me an Euro or
 Change Log
 ----------
 
-### Version 0.2.1 (7 September 2017)
+### Version 0.3 (7 September 2017)
 
 - [#12](https://github.com/cocur/chain/pull/13) Restore constructor (by [sanmai](https://github.com/sanmai))
+- Move first() and last() methods into traits
+- Add additional links (`CountValues`, `KeyExists`, `Splice`)
+- Update `Merge` link
 
 ### Version 0.2 (6 November 2015)
 
