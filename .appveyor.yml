@@ -7,7 +7,7 @@ cache:
   - '%LOCALAPPDATA%\Composer\files'
 
 init:
-  - SET PATH=C:\Program Files\OpenSSL;c:\tools\php;%PATH%
+  - SET PATH=C:\Program Files\OpenSSL;c:\tools\php71;%PATH%
 
 environment:
   matrix:
@@ -17,7 +17,7 @@ install:
   - ps: Set-Service wuauserv -StartupType Manual
   - cinst -y OpenSSL.Light
   - cinst -y php
-  - cd c:\tools\php
+  - cd c:\tools\php71
   - copy php.ini-production php.ini /Y
   - echo date.timezone="UTC" >> php.ini
   - echo extension_dir=ext >> php.ini
