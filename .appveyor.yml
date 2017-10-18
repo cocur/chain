@@ -14,6 +14,7 @@ environment:
     - COMPOSER_FLAGS: ""
 
 install:
+  - ps: Set-Service wuauserv -StartupType Manual
   - cinst -y OpenSSL.Light
   - cinst -y php
   - cd c:\tools\php
