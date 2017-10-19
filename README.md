@@ -143,7 +143,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->push(mixed)`
 - `->reduce(callable[, int])`
 - `->reverse([bool])`
-- `->search([string], [bool])`
+- `->search(mixed[, bool])`
 - `->shift()`
 - `->shuffle()`
 - `->sort(sortFlags)`
