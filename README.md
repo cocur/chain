@@ -110,6 +110,7 @@ instead of the array.
 
 - `->diff(array|Chain)`
 - `->filter(callable)`
+- `->find(callable)`
 - `->flip()`
 - `->intersect(array|chain)`
 - `->intersectAssoc(array|chain)`
