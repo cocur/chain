@@ -131,6 +131,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->count()`
 - `->diff(array|Chain)`
 - `->filter(callable)`
+- `->find(callable)`
 - `->flip()`
 - `->intersect(array|Chain)`
 - `->intersectAssoc(array|Chain)`
