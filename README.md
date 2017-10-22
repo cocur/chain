@@ -233,6 +233,10 @@ In case you want to support the development of Chain you can [send me an Euro or
 Change Log
 ----------
 
+### Version 0.4 (22 September 2017)
+
+- [#17](https://github.com/cocur/chain/pull/17) Add `Filter` link (by [gries](https://github.com/gries))
+
 ### Version 0.3 (7 September 2017)
 
 - [#12](https://github.com/cocur/chain/pull/13) Restore constructor (by [sanmai](https://github.com/sanmai))
