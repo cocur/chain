@@ -18,7 +18,7 @@ trait Find
      *
      * @param callable $callback
      *
-     * @return Chain
+     * @return mixed|boolean Found element, `false` if no result is found
      */
     public function find(callable $callback)
     {
