@@ -234,6 +234,10 @@ In case you want to support the development of Chain you can [send me an Euro or
 Change Log
 ----------
 
+### Version 0.5 (4 December 2017)
+
+- [#19](https://github.com/cocur/chain/pull/19) Add `Join` link (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
+
 ### Version 0.4.1 (4 December 2017)
 
 - Add `Find` link to `Cocur\Chain\Chain`
