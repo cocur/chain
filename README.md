@@ -205,6 +205,7 @@ $chain->reduce(function ($current, $value) {
 - `->count()`
 - `->countValues()`
 - `->first()`
+- `->join([$glue])`
 - `->last()`
 - `->reduce()`
 - `->sum()`
