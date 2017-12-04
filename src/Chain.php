@@ -14,6 +14,7 @@ use Cocur\Chain\Link\Flip;
 use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
+use Cocur\Chain\Link\Join;
 use Cocur\Chain\Link\Keys;
 use Cocur\Chain\Link\Last;
 use Cocur\Chain\Link\Map;
@@ -41,7 +42,7 @@ use Countable;
  * Chain.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2017 Florian Eckerstorfer
  */
 class Chain extends AbstractChain implements Countable
 {
@@ -57,6 +58,7 @@ class Chain extends AbstractChain implements Countable
         Intersect,
         IntersectAssoc,
         IntersectKey,
+        Join,
         Keys,
         Last,
         Map,
