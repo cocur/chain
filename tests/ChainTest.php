@@ -138,4 +138,16 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertInstanceOf('\Countable', $c);
         $this->assertEquals(3, count($c));
     }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Chain::jsonSerialize()
+     */
+    public function chainIsJsonSerializable()
+    {
+        $c = Chain::create([0, 1, 2]);
+
+        $this->assertInstanceOf('\JsonSerializable', $c);
+        $this->assertEquals('[0,1,2]', json_encode($c));
+    }
 }

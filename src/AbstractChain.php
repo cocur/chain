@@ -5,6 +5,7 @@ namespace Cocur\Chain;
 use ArrayAccess;
 use ArrayIterator;
 use IteratorAggregate;
+use JsonSerializable;
 
 /**
  * Chain.
@@ -12,7 +13,7 @@ use IteratorAggregate;
  * @author    Florian Eckerstorfer
  * @copyright 2015 Florian Eckerstorfer
  */
-abstract class AbstractChain implements ArrayAccess, IteratorAggregate
+abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSerializable
 {
     /**
      * @var array
@@ -62,5 +63,13 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate
     public function offsetUnset($offset)
     {
         unset($this->array[$offset]);
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        return $this->array;
     }
 }
