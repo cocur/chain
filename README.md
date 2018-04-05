@@ -234,6 +234,10 @@ In case you want to support the development of Chain you can [send me an Euro or
 Change Log
 ----------
 
+### Version 0.6 (5 April 2018)
+
+- [#23](https://github.com/cocur/chain/pull/23) Add JsonSerializable to Chain (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
+
 ### Version 0.5 (4 December 2017)
 
 - [#19](https://github.com/cocur/chain/pull/19) Add `Join` link (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
