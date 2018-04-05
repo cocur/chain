@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\Chain;
+
 /**
  * Unique.
  *
