@@ -24,7 +24,7 @@ trait Filter
      */
     public function filter(callable $callback)
     {
-        $this->array = array_filter($this->array, $callback);
+        $this->array = array_filter($this->array, $callback, ARRAY_FILTER_USE_BOTH);
 
         return $this;
     }
