@@ -14,9 +14,13 @@ trait Slice
      * @param int      $offset
      * @param int|null $length
      * @param bool     $preserveKeys
+     *
+     * @return Chain
      */
     public function slice($offset, $length = null, $preserveKeys = false)
     {
         $this->array = array_slice($this->array, $offset, $length, $preserveKeys);
+
+        return $this;
     }
 }
