@@ -19,7 +19,9 @@ trait Map
      */
     public function map(callable $callback)
     {
-        $this->array = array_map($callback, $this->array);
+        foreach ($this->array as $index => $element) {
+            $this->array[$index] = $callback($element, $index);
+        }
 
         return $this;
     }
