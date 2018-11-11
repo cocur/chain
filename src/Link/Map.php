@@ -8,7 +8,7 @@ use Cocur\Chain\Chain;
  * Map.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  */
 trait Map
 {

@@ -6,7 +6,7 @@ namespace Cocur\Chain\Link;
  * Sum.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  */
 trait Sum
 {

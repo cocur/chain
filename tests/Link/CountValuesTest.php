@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * CountValuesTest.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
 class CountValuesTest extends PHPUnit_Framework_TestCase

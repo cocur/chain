@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * CountTest.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
 class JoinTest extends PHPUnit_Framework_TestCase
