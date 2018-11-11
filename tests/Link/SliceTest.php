@@ -8,7 +8,7 @@ use PHPUnit_Framework_TestCase;
  * SliceTest.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
 class SliceTest extends PHPUnit_Framework_TestCase

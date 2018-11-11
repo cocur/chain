@@ -11,7 +11,7 @@ use JsonSerializable;
  * Chain.
  *
  * @author    Florian Eckerstorfer
- * @copyright 2015 Florian Eckerstorfer
+ * @copyright 2015-2018 Florian Eckerstorfer
  */
 abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSerializable
 {
