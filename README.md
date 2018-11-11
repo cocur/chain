@@ -131,6 +131,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->intersect(array|Chain)`
 - `->intersectAssoc(array|Chain)`
 - `->intersectKey(array|Chain)`
+- `->keys()`
 - `->map(callable)`
 - `->merge(array|Chain)`
 - `->pad(int, mixed)`
@@ -148,6 +149,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->sum()`
 - `->unique()`
 - `->unshift(mixed)`
+- `->values()`
 
 ### Array Access
 

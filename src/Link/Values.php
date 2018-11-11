@@ -5,21 +5,19 @@ namespace Cocur\Chain\Link;
 use Cocur\Chain\Chain;
 
 /**
- * IntersectKey.
+ * Values.
  *
  * @author    Florian Eckerstorfer
  * @copyright 2015-2018 Florian Eckerstorfer
  */
-trait IntersectKey
+trait Values
 {
     /**
-     * @param Chain|array $array
-     *
      * @return Chain
      */
-    public function intersectKey($array)
+    public function values()
     {
-        $this->array = array_intersect_key($this->array, $array instanceof Chain ? $array->array : $array);
+        $this->array = array_values($this->array);
 
         return $this;
     }
