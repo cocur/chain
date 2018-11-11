@@ -1,5 +1,4 @@
-Chain
-=====
+# Chain
 
 > Chain provides you with a consistent and chainable way to work with arrays in PHP.
 
@@ -11,9 +10,7 @@ Chain
 
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
-
-Motivation
-----------
+## Motivation
 
 Let us be honest. Working with arrays in PHP is a mess. First of all, you have to prefix most (but not all) functions
 with `array_`, the parameter ordering is not consistent. For example, `array_map()` expects the callback as first
@@ -57,11 +54,9 @@ echo Chain::create([1, 2, 3, 4, 5])
     ->sum();
 ```
 
-*Hint: It takes the diff of two arrays, intersects it with a filtered array and sums it up.*
+_Hint: It takes the diff of two arrays, intersects it with a filtered array and sums it up._
 
-
-Installation
-------------
+## Installation
 
 You can install Chain using [Composer](http://getcomposer.org):
 
@@ -69,9 +64,7 @@ You can install Chain using [Composer](http://getcomposer.org):
 $ composer require cocur/chain
 ```
 
-
-Usage
------
+## Usage
 
 Chain allows you to create, manipulate and access arrays.
 
@@ -82,11 +75,13 @@ You can create a Chain by passing an array to the constructor.
 ```php
 $chain = new Chain([1, 2, 3]);
 ```
+
 Or with a convenient static method:
 
 ```php
 $chain = Chain::create([1, 2, 3]);
 ```
+
 In addition a Chain can also be created by the static `fill()` method, which is a wrapper for the `array_fill()`
 function.
 
@@ -136,6 +131,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->intersect(array|Chain)`
 - `->intersectAssoc(array|Chain)`
 - `->intersectKey(array|Chain)`
+- `->keys()`
 - `->map(callable)`
 - `->merge(array|Chain)`
 - `->pad(int, mixed)`
@@ -153,6 +149,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->sum()`
 - `->unique()`
 - `->unshift(mixed)`
+- `->values()`
 
 ### Array Access
 
@@ -210,8 +207,7 @@ $chain->reduce(function ($current, $value) {
 - `->reduce()`
 - `->sum()`
 
-Author
-------
+## Author
 
 Chain has been developed by [Florian Eckerstorfer](https://florian.ec) ([Twitter](https://twitter.com/Florian_)) in
 Vienna, Europe.
@@ -219,9 +215,7 @@ Vienna, Europe.
 > Chain is a project of [Cocur](http://cocur.co). You can contact us on Twitter:
 > [**@cocurco**](https://twitter.com/cocurco)
 
-
-Support
--------
+## Support
 
 If you need support you can ask on [Twitter](https://twitter.com/cocurco) (well, only if your question is short) or you
 can join our chat on Gitter.
@@ -230,9 +224,7 @@ can join our chat on Gitter.
 
 In case you want to support the development of Chain you can [send me an Euro or two](https://paypal.me/florianec/2).
 
-
-Change Log
-----------
+## Change Log
 
 ### Version 0.6 (5 April 2018)
 
@@ -260,18 +252,16 @@ Change Log
 ### Version 0.2 (6 November 2015)
 
 - [#11](https://github.com/cocur/chain/pull/11) Add `Cocur\Chain\Chain::createFromString()` to create a chain from a
-string
+  string
 - [#10](https://github.com/cocur/chain/pull/10) Add methods to `Cocur\Chain\AbstractChain` to retrieve first and last
-element of chain.
+  element of chain.
 - [#9](https://github.com/cocur/chain/pull/9) `Cocur\Chain\Chain` is now countable
 
 ### Version 0.1 (6 November 2015)
 
-- *Initial release*
+- _Initial release_
 
-
-License
--------
+## License
 
 The MIT license applies to Chain. For the full copyright and license information, please view the
 [LICENSE](https://github.com/cocur/vale/blob/master/LICENSE) file distributed with this source code.
