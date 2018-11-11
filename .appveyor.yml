@@ -22,4 +22,4 @@ install:
 
 test_script:
   - cd %APPVEYOR_BUILD_FOLDER%
-- php vendor\phpunit\phpunit\phpunit
+  - php vendor\phpunit\phpunit\phpunit
