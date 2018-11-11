@@ -131,4 +131,24 @@ class SortTest extends PHPUnit_Framework_TestCase
             return $a === $b ? 0 : ($a < $b ? -1 : 1);
         }, ['assoc' => true])->array);
     }
+
+    /**
+     * @test
+     * @covers Cocur\Chain\Link\Sort::sort()
+     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     */
+    public function sortWithNatCaseSort()
+    {
+        /** @var \Cocur\Chain\Link\Sort */
+        $mock = $this->getMockForTrait('Cocur\Chain\Link\Sort');
+        $mock->array = ['IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png'];
+
+        $result = $mock->sort(SORT_NATURAL | SORT_FLAG_CASE);
+        $this->assertSame('IMG0.png', $result->array[0]);
+        $this->assertSame('img1.png', $result->array[1]);
+        $this->assertSame('img2.png', $result->array[2]);
+        $this->assertSame('IMG3.png', $result->array[3]);
+        $this->assertSame('img10.png', $result->array[4]);
+        $this->assertSame('img12.png', $result->array[5]);
+    }
 }
