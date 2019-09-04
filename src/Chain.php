@@ -35,6 +35,7 @@ use Cocur\Chain\Link\Sort;
 use Cocur\Chain\Link\SortKeys;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
+use Cocur\Chain\Link\UniqueMultiDim;
 use Cocur\Chain\Link\Unshift;
 use Countable;
 
@@ -79,6 +80,7 @@ class Chain extends AbstractChain implements Countable
         SortKeys,
         Sum,
         Unique,
+        UniqueMultiDim,
         Unshift;
 
     /**
