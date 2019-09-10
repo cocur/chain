@@ -57,6 +57,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'changeKeyCase'));
         $this->assertTrue(method_exists($c, 'combine'));
         $this->assertTrue(method_exists($c, 'count'));
+        $this->assertTrue(method_exists($c, 'countValues'));
         $this->assertTrue(method_exists($c, 'diff'));
         $this->assertTrue(method_exists($c, 'fill'));
         $this->assertTrue(method_exists($c, 'filter'));
@@ -85,9 +86,11 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'slice'));
         $this->assertTrue(method_exists($c, 'sort'));
         $this->assertTrue(method_exists($c, 'sortKeys'));
+        $this->assertTrue(method_exists($c, 'splice'));
         $this->assertTrue(method_exists($c, 'sum'));
         $this->assertTrue(method_exists($c, 'unique'));
         $this->assertTrue(method_exists($c, 'unshift'));
+        $this->assertTrue(method_exists($c, 'values'));
     }
 
     /**

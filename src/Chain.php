@@ -5,6 +5,7 @@ namespace Cocur\Chain;
 use Cocur\Chain\Link\ChangeKeyCase;
 use Cocur\Chain\Link\Combine;
 use Cocur\Chain\Link\Count;
+use Cocur\Chain\Link\CountValues;
 use Cocur\Chain\Link\Diff;
 use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
@@ -15,6 +16,7 @@ use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
 use Cocur\Chain\Link\Join;
+use Cocur\Chain\Link\KeyExists;
 use Cocur\Chain\Link\Keys;
 use Cocur\Chain\Link\Last;
 use Cocur\Chain\Link\Map;
@@ -33,9 +35,11 @@ use Cocur\Chain\Link\Shuffle;
 use Cocur\Chain\Link\Slice;
 use Cocur\Chain\Link\Sort;
 use Cocur\Chain\Link\SortKeys;
+use Cocur\Chain\Link\Splice;
 use Cocur\Chain\Link\Sum;
 use Cocur\Chain\Link\Unique;
 use Cocur\Chain\Link\Unshift;
+use Cocur\Chain\Link\Values;
 use Countable;
 
 /**
@@ -49,9 +53,10 @@ class Chain extends AbstractChain implements Countable
     use ChangeKeyCase,
         Combine,
         Count,
+        CountValues,
         Diff,
-        Filter,
         Fill,
+        Filter,
         Find,
         First,
         Flip,
@@ -59,6 +64,7 @@ class Chain extends AbstractChain implements Countable
         IntersectAssoc,
         IntersectKey,
         Join,
+        KeyExists,
         Keys,
         Last,
         Map,
@@ -77,9 +83,11 @@ class Chain extends AbstractChain implements Countable
         Slice,
         Sort,
         SortKeys,
+        Splice,
         Sum,
         Unique,
-        Unshift;
+        Unshift,
+        Values;
 
     /**
      * @param array $array
