@@ -62,6 +62,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'filter'));
         $this->assertTrue(method_exists($c, 'find'));
         $this->assertTrue(method_exists($c, 'first'));
+        $this->assertTrue(method_exists($c, 'flatMap'));
         $this->assertTrue(method_exists($c, 'flip'));
         $this->assertTrue(method_exists($c, 'intersect'));
         $this->assertTrue(method_exists($c, 'intersectAssoc'));

@@ -10,6 +10,7 @@ use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
 use Cocur\Chain\Link\First;
 use Cocur\Chain\Link\Find;
+use Cocur\Chain\Link\FlatMap;
 use Cocur\Chain\Link\Flip;
 use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
@@ -54,6 +55,7 @@ class Chain extends AbstractChain implements Countable
         Fill,
         Find,
         First,
+        FlatMap,
         Flip,
         Intersect,
         IntersectAssoc,
