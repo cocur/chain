@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * FindTest
  *
@@ -12,7 +10,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2017 Christoph Rosse
  * @group     unit
  */
-class FindTest extends PHPUnit_Framework_TestCase
+class FindTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * FillTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
-class FillTest extends PHPUnit_Framework_TestCase
+class FillTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -21,7 +19,7 @@ class FillTest extends PHPUnit_Framework_TestCase
     {
         $mock = ChainMock::fill(0, 10);
 
-        $this->assertInternalType('array', $mock->array);
+        $this->assertIsArray($mock->array);
         $this->assertCount(10, $mock->array);
     }
 }

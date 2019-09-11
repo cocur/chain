@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * SortTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @author    Florian Eckerstorfer <florian@eckerstorfer.co>
  * @group     unit
  */
-class SortTest extends PHPUnit_Framework_TestCase
+class SortTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

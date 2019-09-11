@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use PHPUnit_Framework_TestCase;
 
 /**
  * IntersectKeyTest.
@@ -12,7 +11,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
-class IntersectKeyTest extends PHPUnit_Framework_TestCase
+class IntersectKeyTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

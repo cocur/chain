@@ -6,9 +6,9 @@
         "psr-4": {"Cocur\\Chain\\": "src"}
     },
     "require": {
-        "php": ">=5.6"
+        "php": ">=7.2"
     },
     "require-dev": {
-        "phpunit/phpunit": "~5.0"
+        "phpunit/phpunit": "~8.0"
     }
 }

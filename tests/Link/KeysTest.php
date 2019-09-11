@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * KeysTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
-class KeysTest extends PHPUnit_Framework_TestCase
+class KeysTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

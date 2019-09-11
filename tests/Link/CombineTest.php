@@ -3,7 +3,7 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use PHPUnit_Framework_TestCase;
+
 
 /**
  * CombineTest.
@@ -11,7 +11,7 @@ use PHPUnit_Framework_TestCase;
  * @author    Christoph Rosse
  * @group     unit
  */
-class CombineTest extends PHPUnit_Framework_TestCase
+class CombineTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
