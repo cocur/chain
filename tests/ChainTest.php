@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * ChainTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
-class ChainTest extends PHPUnit_Framework_TestCase
+class ChainTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

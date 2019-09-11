@@ -2,7 +2,7 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
+use \PHPUnit\Framework\TestCase;
 
 /**
  * FirstTest.
@@ -11,7 +11,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group unit
  */
-class FirstTest extends PHPUnit_Framework_TestCase
+class FirstTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

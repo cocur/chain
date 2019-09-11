@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use PHPUnit_Framework_TestCase;
 
 /**
  * MergeTest.
@@ -11,7 +10,7 @@ use PHPUnit_Framework_TestCase;
  * @author    Florian Eckerstorfer
  * @copyright 2015-2018 Florian Eckerstorfer
  */
-class MergeTest extends PHPUnit_Framework_TestCase
+class MergeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test

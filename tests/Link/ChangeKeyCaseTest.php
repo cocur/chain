@@ -2,15 +2,13 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * CountTest.
  *
  * @author    Christoph Rosse
  * @group     unit
  */
-class ChangeKeyCaseTest extends PHPUnit_Framework_TestCase
+class ChangeKeyCaseTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
