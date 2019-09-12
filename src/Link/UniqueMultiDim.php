@@ -8,25 +8,32 @@ use Cocur\Chain\Chain;
  * Unique Multidimensional.
  *
  * @author    Paulo Félix
- * @copyright 2019 Paulo Félix
  */
 trait UniqueMultiDim
 {
-    public function uniqueMultiDim($key)
-    {
-        $tempArray = array(); 
-        $i = 0; 
-        $keyArray = array(); 
-        
-        foreach($this->array as $val) { 
-            if (!in_array($val[$key], $keyArray)) { 
-                $keyArray[$i] = $val[$key]; 
-                $tempArray[$i] = $val; 
-            } 
-            $i++; 
-        } 
+    /**
+     * @return Chain
+     */
 
-        $this->array = $tempArray;
+    public function uniqueMultiDim($key=null)
+    {
+        if (isset($key)){
+            $tempArray = array(); 
+            $keyArray = array(); 
+            $i = 0; 
+            
+            foreach($this->array as $val) { 
+                if (!in_array($val[$key], $keyArray)) { 
+                    $keyArray[$i] = $val[$key]; 
+                    $tempArray[$i] = $val; 
+                } 
+                $i++; 
+            } 
+    
+            $this->array = $tempArray;
+        }else{
+            $this->array = array_values(array_map("unserialize", array_unique(array_map("serialize", $this->array))));
+        }
         return $this;
     }
 }

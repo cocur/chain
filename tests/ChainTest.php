@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * ChainTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015-2018 Florian Eckerstorfer
  * @group     unit
  */
-class ChainTest extends PHPUnit_Framework_TestCase
+class ChainTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
@@ -59,11 +57,13 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'changeKeyCase'));
         $this->assertTrue(method_exists($c, 'combine'));
         $this->assertTrue(method_exists($c, 'count'));
+        $this->assertTrue(method_exists($c, 'countValues'));
         $this->assertTrue(method_exists($c, 'diff'));
         $this->assertTrue(method_exists($c, 'fill'));
         $this->assertTrue(method_exists($c, 'filter'));
         $this->assertTrue(method_exists($c, 'find'));
         $this->assertTrue(method_exists($c, 'first'));
+        $this->assertTrue(method_exists($c, 'flatMap'));
         $this->assertTrue(method_exists($c, 'flip'));
         $this->assertTrue(method_exists($c, 'intersect'));
         $this->assertTrue(method_exists($c, 'intersectAssoc'));
@@ -87,9 +87,11 @@ class ChainTest extends PHPUnit_Framework_TestCase
         $this->assertTrue(method_exists($c, 'slice'));
         $this->assertTrue(method_exists($c, 'sort'));
         $this->assertTrue(method_exists($c, 'sortKeys'));
+        $this->assertTrue(method_exists($c, 'splice'));
         $this->assertTrue(method_exists($c, 'sum'));
         $this->assertTrue(method_exists($c, 'unique'));
         $this->assertTrue(method_exists($c, 'unshift'));
+        $this->assertTrue(method_exists($c, 'values'));
     }
 
     /**

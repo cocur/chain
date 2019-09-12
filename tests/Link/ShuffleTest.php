@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use PHPUnit_Framework_TestCase;
-
 /**
  * ShuffleTest.
  *
@@ -11,7 +9,7 @@ use PHPUnit_Framework_TestCase;
  * @copyright 2015 Florian Eckerstorfer
  * @group     unit
  */
-class ShuffleTest extends PHPUnit_Framework_TestCase
+class ShuffleTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
