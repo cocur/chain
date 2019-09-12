@@ -6,7 +6,6 @@
 [![Windows Build status](https://ci.appveyor.com/api/projects/status/vyfgsqsrx98w8d8n?svg=true)](https://ci.appveyor.com/project/florianeckerstorfer/chain)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
 [![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/cocur/chain.svg?style=flat)](https://scrutinizer-ci.com/g/cocur/chain/?branch=master)
-[![StyleCI](https://styleci.io/repos/43258211/shield)](https://styleci.io/repos/43258211)
 
 Made by [Florian Eckerstorfer](https://florian.ec) in Vienna, Europe.
 
@@ -226,6 +225,12 @@ can join our chat on Gitter.
 In case you want to support the development of Chain you can [send me an Euro or two](https://paypal.me/florianec/2).
 
 ## Change Log
+
+### Version 0.8 (12 September 2019)
+
+- [#40](https://github.com/cocur/chain/pull/40) Update tooling and dependencies, set minimum PHP version to 7.2
+- [#37](https://github.com/cocur/chain/pull/37) Add missing traits `\Cocur\Chain\Chain` (by [nreynis](https://github.com/nreynis))
+- [#41](https://github.com/cocur/chain/pull/41) Add `➞ flatMap()` (by [nreynis](https://github.com/nreynis))
 
 ### Version 0.7 (11 November 2018)
 
