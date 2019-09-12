@@ -127,6 +127,7 @@ All of these methods manipulate the array, but not all of them return an instanc
 - `->diff(array|Chain)`
 - `->filter(callable)`
 - `->find(callable)`
+- `->flatMap(callable)`
 - `->flip()`
 - `->intersect(array|Chain)`
 - `->intersectAssoc(array|Chain)`
