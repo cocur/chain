@@ -226,24 +226,24 @@ In case you want to support the development of Chain you can [send me an Euro or
 
 ## Change Log
 
-### Version 0.8 (12 September 2019)
+### Version 0.8.0 (12 September 2019)
 
 - [#40](https://github.com/cocur/chain/pull/40) Update tooling and dependencies, set minimum PHP version to 7.2
 - [#37](https://github.com/cocur/chain/pull/37) Add missing traits `\Cocur\Chain\Chain` (by [nreynis](https://github.com/nreynis))
 - [#41](https://github.com/cocur/chain/pull/41) Add `➞ flatMap()` (by [nreynis](https://github.com/nreynis))
 
-### Version 0.7 (11 November 2018)
+### Version 0.7.0 (11 November 2018)
 
 - [#28](https://github.com/cocur/chain/pull/28) Fix `->slice()` (by [Arpple](https://github.com/Arpple))
 - [#29](https://github.com/cocur/chain/pull/29) Pass key to callback in `->filter()` (by [silvadanilo](https://github.com/silvadanilo))
 - [#30](https://github.com/cocur/chain/pull/30) Pass key to callback in `->map()` (by [silvadanilo](https://github.com/silvadanilo))
 - [#31](https://github.com/cocur/chain/pull/31) Add `->values()` link (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
 
-### Version 0.6 (5 April 2018)
+### Version 0.6.0 (5 April 2018)
 
 - [#23](https://github.com/cocur/chain/pull/23) Add JsonSerializable to Chain (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
 
-### Version 0.5 (4 December 2017)
+### Version 0.5.0 (4 December 2017)
 
 - [#19](https://github.com/cocur/chain/pull/19) Add `Join` link (by [florianeckerstorfer](https://github.com/florianeckerstorfer))
 
@@ -251,18 +251,18 @@ In case you want to support the development of Chain you can [send me an Euro or
 
 - Add `Find` link to `Cocur\Chain\Chain`
 
-### Version 0.4 (22 September 2017)
+### Version 0.4.0 (22 September 2017)
 
 - [#17](https://github.com/cocur/chain/pull/17) Add `Find` link (by [gries](https://github.com/gries))
 
-### Version 0.3 (7 September 2017)
+### Version 0.3.0 (7 September 2017)
 
 - [#12](https://github.com/cocur/chain/pull/13) Restore constructor (by [sanmai](https://github.com/sanmai))
 - Move first() and last() methods into traits
 - Add additional links (`CountValues`, `KeyExists`, `Splice`)
 - Update `Merge` link
 
-### Version 0.2 (6 November 2015)
+### Version 0.2.0 (6 November 2015)
 
 - [#11](https://github.com/cocur/chain/pull/11) Add `Cocur\Chain\Chain::createFromString()` to create a chain from a
   string
@@ -270,7 +270,7 @@ In case you want to support the development of Chain you can [send me an Euro or
   element of chain.
 - [#9](https://github.com/cocur/chain/pull/9) `Cocur\Chain\Chain` is now countable
 
-### Version 0.1 (6 November 2015)
+### Version 0.1.0 (6 November 2015)
 
 - _Initial release_
 
