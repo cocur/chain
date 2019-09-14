@@ -104,7 +104,7 @@ class Chain extends AbstractChain implements Countable
      *
      * @return Chain
      */
-    public static function create(array $array = [])
+    public static function create(array $array = []): Chain
     {
         return new static($array);
     }
@@ -117,7 +117,7 @@ class Chain extends AbstractChain implements Countable
      *
      * @return Chain
      */
-    public static function createFromString($delimiter, $string, array $options = [])
+    public static function createFromString(string $delimiter, string $string, array $options = []): Chain
     {
         $options = array_merge(['regexp' => false], $options);
         $chain   = new static();

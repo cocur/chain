@@ -20,7 +20,7 @@ trait Sort
      *
      * @return Chain
      */
-    public function sort($sortBy = SORT_REGULAR, array $options = [])
+    public function sort($sortBy = SORT_REGULAR, array $options = []): Chain
     {
         if (!$sortBy) {
             $sortBy = SORT_REGULAR;
@@ -38,7 +38,7 @@ trait Sort
      * @param callable $callback
      * @param array    $options
      */
-    private function sortWithCallback(callable $callback, array $options = [])
+    private function sortWithCallback(callable $callback, array $options = []): void
     {
         if (isset($options['assoc']) && $options['assoc']) {
             uasort($this->array, $callback);
@@ -51,7 +51,7 @@ trait Sort
      * @param int   $sortFlags
      * @param array $options
      */
-    private function sortWithFlags($sortFlags = SORT_REGULAR, array $options = [])
+    private function sortWithFlags(int $sortFlags = SORT_REGULAR, array $options = []): void
     {
         if (!empty($options['assoc']) && !empty($options['reverse'])) {
             arsort($this->array, $sortFlags);

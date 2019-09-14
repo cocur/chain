@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * FilterTest.
  *
@@ -15,12 +17,13 @@ class FilterTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Filter::filter()
      */
-    public function filterFiltersArray()
+    public function filterFiltersArray(): void
     {
-        /** @var \Cocur\Chain\Link\Filter $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Filter');
+        /** @var Filter $mock */
+        $mock        = $this->getMockForTrait(Filter::class);
         $mock->array = [0, 1, 2, 3];
-        $mock->filter(function ($v) { return $v & 1; });
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
+        $mock->filter(function ($v): bool { return $v & 1; });
 
         $this->assertCount(2, $mock->array);
         $this->assertContains(1, $mock->array);
@@ -33,12 +36,13 @@ class FilterTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Filter::filter()
      */
-    public function filterFiltersArrayByKey()
+    public function filterFiltersArrayByKey(): void
     {
-        /** @var \Cocur\Chain\Link\Filter $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Filter');
+        /** @var Filter $mock */
+        $mock        = $this->getMockForTrait(Filter::class);
         $mock->array = ["0" => 0, "1" => 1, "2" => 2, "3" => 3];
-        $mock->filter(function ($v, $k) { return intval($k) & 1; });
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
+        $mock->filter(function ($v, $k): bool { return intval($k) & 1; });
 
         $this->assertCount(2, $mock->array);
         $this->assertContains(1, $mock->array);

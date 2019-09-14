@@ -25,7 +25,7 @@ trait Fill
      *
      * @return Chain
      */
-    public static function fill($startIndex, $num, $value = null)
+    public static function fill(int $startIndex, int $num, $value = null): Chain
     {
         return new self(array_fill($startIndex, $num, $value));
     }

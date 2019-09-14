@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * UnshiftTest.
  *
@@ -15,11 +17,12 @@ class UnshiftTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Unshift::unshift()
      */
-    public function unshiftPrependsElement()
+    public function unshiftPrependsElement(): void
     {
-        /** @var \Cocur\Chain\Link\Unshift $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Unshift');
+        /** @var Unshift $mock */
+        $mock        = $this->getMockForTrait(Unshift::class);
         $mock->array = [1];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->unshift(0);
 
         $this->assertEquals([0, 1], $mock->array);

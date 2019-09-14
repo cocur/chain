@@ -22,7 +22,7 @@ trait Merge
      *
      * @return Chain
      */
-    public function merge($array, array $options = [])
+    public function merge($array, array $options = []): Chain
     {
         $options = array_merge(['recursive' => false], $options);
 

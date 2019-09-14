@@ -15,10 +15,10 @@ class SearchTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Search::search()
      */
-    public function searchSearchesArrayForValue()
+    public function searchSearchesArrayForValue(): void
     {
-        /** @var \Cocur\Chain\Link\Search $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Search');
+        /** @var Search $mock */
+        $mock        = $this->getMockForTrait(Search::class);
         $mock->array = ['foo', 'bar'];
 
         $this->assertEquals(1, $mock->search('bar'));

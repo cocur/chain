@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * ShuffleTest.
  *
@@ -15,11 +17,12 @@ class ShuffleTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Shuffle::shuffle()
      */
-    public function shuffleRandomizesChain()
+    public function shuffleRandomizesChain(): void
     {
-        /** @var \Cocur\Chain\Link\Shuffle $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Shuffle');
+        /** @var Shuffle $mock */
+        $mock        = $this->getMockForTrait(Shuffle::class);
         $mock->array = [0, 1, 3, 4, 5, 6, 7, 8, 9];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->shuffle();
 
         $this->assertNotEquals([0, 1, 2, 3, 4, 5, 6, 7, 8, 9], $mock->array);

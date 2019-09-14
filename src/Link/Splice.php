@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\Chain;
+
 /**
  * Splice.
  *
@@ -10,12 +12,23 @@ namespace Cocur\Chain\Link;
  */
 trait Splice
 {
-    public function splice($offset, $length = null, $replacement = [])
+    /**
+     * Remove a portion of the array and replace it with something else
+     *
+     * @param int $offset
+     * @param int|null $length
+     * @param array $replacement
+     *
+     * @return Chain
+     */
+    public function splice(int $offset, ?int $length = null, $replacement = []): Chain
     {
         if ($length) {
             array_splice($this->array, $offset, $length, $replacement);
         } else {
             array_splice($this->array, $offset);
         }
+
+        return $this;
     }
 }

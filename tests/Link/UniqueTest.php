@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * UniqueTest.
  *
@@ -15,11 +17,12 @@ class UniqueTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Unique::unique()
      */
-    public function uniqueRemovesDuplicates()
+    public function uniqueRemovesDuplicates(): void
     {
-        /** @var \Cocur\Chain\Link\Unique $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Unique');
+        /** @var Unique $mock */
+        $mock        = $this->getMockForTrait(Unique::class);
         $mock->array = [0, 1, 0, 0];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->unique();
 
         $this->assertEquals([0, 1], $mock->array);

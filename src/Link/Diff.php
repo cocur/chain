@@ -22,7 +22,7 @@ trait Diff
      *
      * @return Chain
      */
-    public function diff($array2)
+    public function diff($array2): Chain
     {
         $this->array = array_diff(
             $this->array,

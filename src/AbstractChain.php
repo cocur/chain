@@ -23,7 +23,7 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSeri
     /**
      * @return ArrayIterator
      */
-    public function getIterator()
+    public function getIterator(): ArrayIterator
     {
         return new ArrayIterator($this->array);
     }
@@ -33,7 +33,7 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSeri
      *
      * @return bool
      */
-    public function offsetExists($offset)
+    public function offsetExists($offset): bool
     {
         return isset($this->array[$offset]);
     }
@@ -52,7 +52,7 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSeri
      * @param mixed $offset
      * @param mixed $value
      */
-    public function offsetSet($offset, $value)
+    public function offsetSet($offset, $value): void
     {
         $this->array[$offset] = $value;
     }
@@ -60,7 +60,7 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSeri
     /**
      * @param mixed $offset
      */
-    public function offsetUnset($offset)
+    public function offsetUnset($offset): void
     {
         unset($this->array[$offset]);
     }
@@ -68,7 +68,7 @@ abstract class AbstractChain implements ArrayAccess, IteratorAggregate, JsonSeri
     /**
      * @return array
      */
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->array;
     }

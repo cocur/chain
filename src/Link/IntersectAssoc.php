@@ -17,7 +17,7 @@ trait IntersectAssoc
      *
      * @return Chain
      */
-    public function intersectAssoc($array)
+    public function intersectAssoc($array): Chain
     {
         $this->array = array_intersect_assoc($this->array, $array instanceof Chain ? $array->array : $array);
 

@@ -15,10 +15,10 @@ class SumTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Sum::sum()
      */
-    public function sumReturnsSumOfArray()
+    public function sumReturnsSumOfArray(): void
     {
-        /** @var \Cocur\Chain\Link\Sum $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Sum');
+        /** @var Sum $mock */
+        $mock        = $this->getMockForTrait(Sum::class);
         $mock->array = [1, 2, 3];
 
         $this->assertEquals(6, $mock->sum());

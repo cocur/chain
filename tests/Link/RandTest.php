@@ -15,10 +15,10 @@ class RandTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Rand::rand()
      */
-    public function randSelectsRandomElement()
+    public function randSelectsRandomElement(): void
     {
-        /** @var \Cocur\Chain\Link\Rand $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Rand');
+        /** @var Rand $mock */
+        $mock        = $this->getMockForTrait(Rand::class);
         $mock->array = [0, 1, 2];
 
         $rand = $mock->rand();

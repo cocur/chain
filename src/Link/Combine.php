@@ -20,7 +20,7 @@ trait Combine
      *
      * @return Chain
      */
-    public function combine($keys, $values)
+    public function combine($keys, $values): Chain
     {
         $this->array = array_combine(
             $keys instanceof Chain ? $keys->array : $keys,

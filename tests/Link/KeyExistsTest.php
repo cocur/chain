@@ -15,10 +15,10 @@ class KeyExistsTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\KeyExists::keyExists()
      */
-    public function keyExistsReturnsTrueIfKeyExists()
+    public function keyExistsReturnsTrueIfKeyExists(): void
     {
-        /** @var \Cocur\Chain\Link\KeyExists $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\KeyExists');
+        /** @var KeyExists $mock */
+        $mock        = $this->getMockForTrait(KeyExists::class);
         $mock->array = ['foo' => 1, 'bar' => null];
 
         $this->assertTrue($mock->keyExists('foo'));
@@ -29,10 +29,10 @@ class KeyExistsTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\KeyExists::keyExists()
      */
-    public function keyExistsReturnsFalseIfKeyDoesNotExist()
+    public function keyExistsReturnsFalseIfKeyDoesNotExist(): void
     {
-        /** @var \Cocur\Chain\Link\KeyExists $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\KeyExists');
+        /** @var KeyExists $mock */
+        $mock        = $this->getMockForTrait(KeyExists::class);
         $mock->array = [];
 
         $this->assertFalse($mock->keyExists('invalid'));

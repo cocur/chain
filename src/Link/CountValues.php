@@ -17,7 +17,7 @@ trait CountValues
      *
      * @return array An associative array of values from the array as keys and their count value.
      */
-    public function countValues()
+    public function countValues(): array
     {
         return array_count_values($this->array);
     }

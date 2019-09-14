@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\Chain;
+
 /**
  * Push.
  *
@@ -15,7 +17,7 @@ trait Push
      *
      * @return Chain
      */
-    public function push($element)
+    public function push($element): Chain
     {
         array_push($this->array, $element);
 

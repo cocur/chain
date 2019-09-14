@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * FlipTest.
  *
@@ -15,11 +17,12 @@ class FlipTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Flip::flip()
      */
-    public function flipExchangesKeysAndValues()
+    public function flipExchangesKeysAndValues(): void
     {
-        /** @var \Cocur\Chain\Link\Flip $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Flip');
+        /** @var Flip $mock */
+        $mock        = $this->getMockForTrait(Flip::class);
         $mock->array = ['foo', 'bar'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->flip();
 
         $this->assertEquals(['foo' => 0, 'bar' => 1], $mock->array);

@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\Chain;
+
 /**
  * Flip.
  *
@@ -13,7 +15,7 @@ trait Flip
     /**
      * @return Chain
      */
-    public function flip()
+    public function flip(): Chain
     {
         $this->array = array_flip($this->array);
 

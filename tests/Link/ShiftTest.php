@@ -15,10 +15,10 @@ class ShiftTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Shift::shift()
      */
-    public function shiftShiftsElementOff()
+    public function shiftShiftsElementOff(): void
     {
-        /** @var \Cocur\Chain\Link\Shift $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Shift');
+        /** @var Shift $mock */
+        $mock        = $this->getMockForTrait(Shift::class);
         $mock->array = [0, 1];
 
         $this->assertEquals(0, $mock->shift());

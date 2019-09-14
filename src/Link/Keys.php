@@ -15,7 +15,7 @@ trait Keys
     /**
      * @return Chain
      */
-    public function keys()
+    public function keys(): Chain
     {
         $this->array = array_keys($this->array);
 

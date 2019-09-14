@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * ReverseTest.
  *
@@ -15,11 +17,12 @@ class ReverseTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Reverse::reverse()
      */
-    public function reverseReversesTheChain()
+    public function reverseReversesTheChain(): void
     {
-        /** @var \Cocur\Chain\Link\Reverse $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Reverse');
+        /** @var Reverse $mock */
+        $mock        = $this->getMockForTrait(Reverse::class);
         $mock->array = [0, 1];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->reverse();
 
         $this->assertEquals([1, 0], $mock->array);

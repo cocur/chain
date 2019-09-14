@@ -16,7 +16,7 @@ trait Search
      *
      * @return mixed
      */
-    public function search($needle, $strict = false)
+    public function search($needle, bool $strict = false)
     {
         return array_search($needle, $this->array, $strict);
     }

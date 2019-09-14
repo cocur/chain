@@ -17,7 +17,7 @@ trait Map
      *
      * @return Chain
      */
-    public function map(callable $callback)
+    public function map(callable $callback): Chain
     {
         foreach ($this->array as $index => $element) {
             $this->array[$index] = $callback($element, $index);

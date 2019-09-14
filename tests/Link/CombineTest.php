@@ -3,6 +3,7 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
+use Cocur\Chain\ChainTest;
 
 
 /**
@@ -17,14 +18,15 @@ class CombineTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Combine::combine()
      */
-    public function combineValuesAndKeysWithChainTest()
+    public function combineValuesAndKeysWithChainTest(): void
     {
-        /** @var \Cocur\Chain\Link\Combine $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Combine');
+        /** @var Combine $mock */
+        $mock = $this->getMockForTrait(Combine::class);
 
         $keys   = Chain::create(['foo', 'bar']);
         $values = Chain::create([42, 43]);
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertEquals(['foo' => 42, 'bar' => 43], $mock->combine($keys, $values)->array);
     }
 
@@ -32,14 +34,15 @@ class CombineTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Combine::combine()
      */
-    public function combineValuesAndKeysWithArraysTest()
+    public function combineValuesAndKeysWithArraysTest(): void
     {
-        /** @var \Cocur\Chain\Link\Combine $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Combine');
+        /** @var Combine $mock */
+        $mock = $this->getMockForTrait(Combine::class);
 
         $keys   = ['foo', 'bar'];
         $values = [42, 43];
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertEquals(['foo' => 42, 'bar' => 43], $mock->combine($keys, $values)->array);
     }
 }

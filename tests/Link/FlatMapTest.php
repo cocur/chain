@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * MapTest.
  *
@@ -14,11 +16,12 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\FlatMap::flatMap()
      */
-    public function flatMapAppliesMapToArray()
+    public function flatMapAppliesMapToArray(): void
     {
-        /** @var \Cocur\Chain\Link\FlatMap $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\FlatMap');
+        /** @var FlatMap $mock */
+        $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['foobar', 'bar'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->flatMap(function ($v) { return [str_replace('bar', 'foo', $v)]; });
 
         $this->assertEquals('foofoo', $mock->array[0]);
@@ -29,11 +32,12 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\FlatMap::flatMap()
      */
-    public function flatMapCallbackReceivesAlsoArrayKeys()
+    public function flatMapCallbackReceivesAlsoArrayKeys(): void
     {
-        /** @var \Cocur\Chain\Link\FlatMap $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\FlatMap');
+        /** @var FlatMap $mock */
+        $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['foo' => 'fizz', 'bar' => 'buzz'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->flatMap(function ($v, $k) {
             return $k == 'foo' ? [str_replace('fizz', 'bang', $v)] : [$v];
         });
@@ -45,11 +49,12 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\FlatMap::flatMap()
      */
-    public function flatMapCallbackCanReturnScalarOrArray()
+    public function flatMapCallbackCanReturnScalarOrArray(): void
     {
-        /** @var \Cocur\Chain\Link\FlatMap $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\FlatMap');
+        /** @var FlatMap $mock */
+        $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['fizz', 'buzz'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->flatMap(function ($v, $k) {
             return $k == 1 ? [$v] : $v;
         });
@@ -61,11 +66,12 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\FlatMap::flatMap()
      */
-    public function flatMapAcceptsEmptyArray()
+    public function flatMapAcceptsEmptyArray(): void
     {
-        /** @var \Cocur\Chain\Link\FlatMap $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\FlatMap');
+        /** @var FlatMap $mock */
+        $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = [];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->flatMap(function ($v) {
             return $v;
         });

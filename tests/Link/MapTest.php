@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * MapTest.
  *
@@ -15,11 +17,12 @@ class MapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Map::map()
      */
-    public function mapAppliesMapToArray()
+    public function mapAppliesMapToArray(): void
     {
-        /** @var \Cocur\Chain\Link\Map $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Map');
+        /** @var Map $mock */
+        $mock        = $this->getMockForTrait(Map::class);
         $mock->array = ['foobar', 'bar'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->map(function ($v) { return str_replace('bar', 'foo', $v); });
 
         $this->assertEquals('foofoo', $mock->array[0]);
@@ -30,11 +33,12 @@ class MapTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Map::map()
      */
-    public function mapCallbackReceivesAlsoArrayKeys()
+    public function mapCallbackReceivesAlsoArrayKeys(): void
     {
-        /** @var \Cocur\Chain\Link\Map $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Map');
+        /** @var Map $mock */
+        $mock        = $this->getMockForTrait(Map::class);
         $mock->array = ['foo' => 'fizz', 'bar' => 'buzz'];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->map(function ($v, $k) {
             return $k == 'foo' ? str_replace('fizz', 'bang', $v) : $v;
         });

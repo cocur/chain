@@ -15,7 +15,7 @@ trait Values
     /**
      * @return Chain
      */
-    public function values()
+    public function values(): Chain
     {
         $this->array = array_values($this->array);
 

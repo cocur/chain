@@ -17,10 +17,10 @@ class CountTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Count::count()
      */
-    public function countReturnsNumberOfElements()
+    public function countReturnsNumberOfElements(): void
     {
-        /** @var \Cocur\Chain\Link\Count $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Count');
+        /** @var Count $mock */
+        $mock        = $this->getMockForTrait(Count::class);
         $mock->array = [0, 1, 2, 3];
 
         $this->assertEquals(4, $mock->count());

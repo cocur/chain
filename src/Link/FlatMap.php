@@ -12,9 +12,11 @@ use Cocur\Chain\Chain;
 trait FlatMap
 {
     /**
+     * @param callable $callback
+     *
      * @return Chain
      */
-    public function flatMap(callable $callback)
+    public function flatMap(callable $callback): Chain
     {
         $flattened = [];
         foreach ($this->array as $index => $element) {

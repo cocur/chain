@@ -17,7 +17,7 @@ trait IntersectKey
      *
      * @return Chain
      */
-    public function intersectKey($array)
+    public function intersectKey($array): Chain
     {
         $this->array = array_intersect_key($this->array, $array instanceof Chain ? $array->array : $array);
 
