@@ -11,7 +11,7 @@ namespace Cocur\Chain\Link;
 trait Product
 {
     /**
-     * @return number
+     * @return int|float
      */
     public function product()
     {

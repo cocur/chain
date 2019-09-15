@@ -17,7 +17,7 @@ trait Replace
      *
      * @return Chain
      */
-    public function replace($array)
+    public function replace($array): Chain
     {
         $this->array = array_replace($this->array, $array instanceof Chain ? $chain->array : $array);
 

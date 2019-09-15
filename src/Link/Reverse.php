@@ -17,7 +17,7 @@ trait Reverse
      *
      * @return Chain
      */
-    public function reverse($preserveKeys = false)
+    public function reverse(bool $preserveKeys = false): Chain
     {
         $this->array = array_reverse($this->array, $preserveKeys);
 

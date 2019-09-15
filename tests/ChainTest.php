@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain;
 
+use PHPUnit\Framework\MockObject\MockObject;
+
 /**
  * ChainTest.
  *
@@ -12,10 +14,27 @@ namespace Cocur\Chain;
 class ChainTest extends \PHPUnit\Framework\TestCase
 {
     /**
+     * Generate the expected TypeError that will be emitted when mocking Trait using Fluent design.
+     * This serve two purposes:
+     * - swallow the error and keep the test passing
+     * - validate that the method is effectively fluent.
+     *
+     * @param MockObject $mockedTrait
+     * @return string
+     */
+    public static function getFluentTypeErrorForMockedTrait(MockObject $mockedTrait): string
+    {
+        $mockClass = get_class($mockedTrait);
+        $traitClass = substr($mockClass, 5, -9);
+        return sprintf('/Return value of %s::.*?\\(\\) must be an instance of %s, instance of %s returned/',
+            $traitClass, str_replace('\\', '\\\\', Chain::class), $mockClass);
+    }
+
+    /**
      * @test
      * @covers Cocur\Chain\Chain::__construct()
      */
-    public function constructorCreatesChain()
+    public function constructorCreatesChain(): void
     {
         $this->assertEquals([1, 2, 3], (new Chain([1, 2, 3]))->array);
     }
@@ -24,7 +43,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Chain::create()
      */
-    public function createCreatesChain()
+    public function createCreatesChain(): void
     {
         $this->assertEquals([1, 2, 3], Chain::create([1, 2, 3])->array);
     }
@@ -33,7 +52,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Chain::createFromString()
      */
-    public function createCreatesChainBySplittingStringWithDelimiter()
+    public function createCreatesChainBySplittingStringWithDelimiter(): void
     {
         $this->assertEquals([1, 2, 3], Chain::createFromString(',', '1,2,3')->array);
     }
@@ -42,7 +61,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Chain::createFromString()
      */
-    public function createCreatesChainBySplittingStringWithRegExp()
+    public function createCreatesChainBySplittingStringWithRegExp(): void
     {
         $this->assertEquals([1, 2, 3, 4], Chain::createFromString('/[a-z]/', '1a2b3c4', ['regexp' => true])->array);
     }
@@ -50,7 +69,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
-    public function chainHasTraits()
+    public function chainHasTraits(): void
     {
         $c = new Chain();
 
@@ -98,12 +117,12 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\AbstractChain::getIterator()
      */
-    public function chainIsTraversable()
+    public function chainIsTraversable(): void
     {
         $data = ['a', 'b'];
         $c    = Chain::create($data);
 
-        $this->assertInstanceOf('\Traversable', $c);
+        $this->assertInstanceOf(\Traversable::class, $c);
 
         foreach ($c as $key => $value) {
             $this->assertEquals($data[$key], $value);
@@ -117,7 +136,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @covers Cocur\Chain\AbstractChain::offsetSet()
      * @covers Cocur\Chain\AbstractChain::offsetUnset()
      */
-    public function chainAllowsArrayAccess()
+    public function chainAllowsArrayAccess(): void
     {
         $c = Chain::create();
 
@@ -133,11 +152,11 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Chain::count()
      */
-    public function chainIsCountable()
+    public function chainIsCountable(): void
     {
         $c = Chain::create([0, 1, 2]);
 
-        $this->assertInstanceOf('\Countable', $c);
+        $this->assertInstanceOf(\Countable::class, $c);
         $this->assertEquals(3, count($c));
     }
 
@@ -145,11 +164,11 @@ class ChainTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Chain::jsonSerialize()
      */
-    public function chainIsJsonSerializable()
+    public function chainIsJsonSerializable(): void
     {
         $c = Chain::create([0, 1, 2]);
 
-        $this->assertInstanceOf('\JsonSerializable', $c);
+        $this->assertInstanceOf(\JsonSerializable::class, $c);
         $this->assertEquals('[0,1,2]', json_encode($c));
     }
 }

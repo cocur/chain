@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * SpliceTest.
  *
@@ -15,12 +17,13 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Splice::splice()
      */
-    public function spliceRemovesAPortionOfTheArray()
+    public function spliceRemovesAPortionOfTheArray(): void
     {
-        /** @var \Cocur\Chain\Link\Splice $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Splice');
+        /** @var Splice $mock */
+        $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(2);
         $this->assertSame(['lemon', 'orange'], $mock->array);
     }
@@ -29,12 +32,13 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Splice::splice()
      */
-    public function spliceRemovesAPortionOfTheArrayWithNegativeLength()
+    public function spliceRemovesAPortionOfTheArrayWithNegativeLength(): void
     {
-        /** @var \Cocur\Chain\Link\Splice $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Splice');
+        /** @var Splice $mock */
+        $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(1, -1);
         $this->assertSame(['lemon', 'apple'], $mock->array);
     }
@@ -43,12 +47,13 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Splice::splice()
      */
-    public function spliceRemovesAPortionOfTheArrayWithReplacement()
+    public function spliceRemovesAPortionOfTheArrayWithReplacement(): void
     {
-        /** @var \Cocur\Chain\Link\Splice $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Splice');
+        /** @var Splice $mock */
+        $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(1, 4, 'kiwi');
         $this->assertSame(['lemon', 'kiwi'], $mock->array);
     }
@@ -57,12 +62,13 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Splice::splice()
      */
-    public function spliceRemovesAPortionOfTheArrayWithArrayReplacement()
+    public function spliceRemovesAPortionOfTheArrayWithArrayReplacement(): void
     {
-        /** @var \Cocur\Chain\Link\Splice $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Splice');
+        /** @var Splice $mock */
+        $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(-1, 1, ['kiwi', 'pineapple']);
         $this->assertSame(['lemon', 'orange', 'banana', 'kiwi', 'pineapple'], $mock->array);
     }

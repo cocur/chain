@@ -20,7 +20,7 @@ trait KeyExists
      *
      * @return bool `true` if key or index exists in array, `false` otherwise.
      */
-    public function keyExists($key)
+    public function keyExists($key): bool
     {
         return array_key_exists($key, $this->array);
     }

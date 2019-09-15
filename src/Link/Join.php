@@ -18,7 +18,7 @@ trait Join
      * @return string Returns a string containing a string representation of all the array elements in the same order,
      *                with the glue string between each element.
      */
-    public function join($glue = '')
+    public function join(string $glue = ''): string
     {
         return implode($glue, $this->array);
     }

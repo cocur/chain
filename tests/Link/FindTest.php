@@ -16,13 +16,13 @@ class FindTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Find::find()
      */
-    public function findFindsAnElementByACallback()
+    public function findFindsAnElementByACallback(): void
     {
-        /** @var \Cocur\Chain\Link\Find $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Find');
+        /** @var Find $mock */
+        $mock = $this->getMockForTrait(Find::class);
         $mock->array = ['foo', 'bar', 'bar'];
 
-        $result = $mock->find(function ($item) { return $item === 'bar'; });
+        $result = $mock->find(function ($item): bool { return $item === 'bar'; });
         $this->assertEquals('bar', $result);
     }
 
@@ -30,13 +30,13 @@ class FindTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Find::find()
      */
-    public function findReturnsFalseIfElementCantBeFound()
+    public function findReturnsFalseIfElementCantBeFound(): void
     {
-        /** @var \Cocur\Chain\Link\Find $mock */
-        $mock = $this->getMockForTrait('Cocur\Chain\Link\Find');
+        /** @var Find $mock */
+        $mock = $this->getMockForTrait(Find::class);
         $mock->array = ['foo', 'bar', 'bar'];
 
-        $result = $mock->find(function ($item) { return $item === 'IDONTEXIST'; });
+        $result = $mock->find(function ($item): bool { return $item === 'IDONTEXIST'; });
         $this->assertFalse($result);
     }
 }

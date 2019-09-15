@@ -20,7 +20,7 @@ trait ChangeKeyCase
      *
      * @return Chain
      */
-    public function changeKeyCase($case = CASE_LOWER)
+    public function changeKeyCase(int $case = CASE_LOWER): Chain
     {
         $this->array = array_change_key_case($this->array, $case);
 

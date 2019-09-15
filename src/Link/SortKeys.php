@@ -20,7 +20,7 @@ trait SortKeys
      *
      * @return Chain
      */
-    public function sortKeys($sortBy = SORT_REGULAR, array $options = [])
+    public function sortKeys($sortBy = SORT_REGULAR, array $options = []): Chain
     {
         if ($sortBy && is_callable($sortBy)) {
             uksort($this->array, $sortBy);
@@ -35,7 +35,7 @@ trait SortKeys
      * @param int   $sortFlags
      * @param array $options
      */
-    private function sortKeysWithFlags($sortFlags = SORT_REGULAR, array $options = [])
+    private function sortKeysWithFlags(int $sortFlags = SORT_REGULAR, array $options = []): void
     {
         if (!empty($options['reverse'])) {
             krsort($this->array, $sortFlags);

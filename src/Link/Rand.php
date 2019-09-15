@@ -15,7 +15,7 @@ trait Rand
      *
      * @return mixed
      */
-    public function rand($num = 1)
+    public function rand(int $num = 1)
     {
         return array_rand($this->array, $num);
     }

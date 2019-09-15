@@ -15,10 +15,10 @@ class CountValuesTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\CountValues::countValues()
      */
-    public function countValuesReturnsValueCounts()
+    public function countValuesReturnsValueCounts(): void
     {
-        /** @var \Cocur\Chain\Link\CountValues $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\CountValues');
+        /** @var CountValues $mock */
+        $mock        = $this->getMockForTrait(CountValues::class);
         $mock->array = ['lemon', 'orange', 'lemon', 'apple', 'lemon'];
 
         $this->assertSame(['lemon' => 3, 'orange' => 1, 'apple' => 1], $mock->countValues());

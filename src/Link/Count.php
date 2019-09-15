@@ -15,7 +15,7 @@ trait Count
      *
      * @return int Returns the number of elements in the array.
      */
-    public function count()
+    public function count(): int
     {
         return count($this->array);
     }

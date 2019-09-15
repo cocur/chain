@@ -2,6 +2,8 @@
 
 namespace Cocur\Chain\Link;
 
+use Cocur\Chain\ChainTest;
+
 /**
  * ReplaceTest.
  *
@@ -15,11 +17,12 @@ class ReplaceTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Replace::replace()
      */
-    public function replaceReplacesValuesInArray()
+    public function replaceReplacesValuesInArray(): void
     {
-        /** @var \Cocur\Chain\Link\Replace $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Replace');
+        /** @var Replace $mock */
+        $mock        = $this->getMockForTrait(Replace::class);
         $mock->array = [0, 1, 2, 3, 4];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->replace([1 => 42, 3 => 69]);
 
         $this->assertEquals(0, $mock->array[0]);

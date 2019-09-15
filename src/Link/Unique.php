@@ -17,7 +17,7 @@ trait Unique
      *
      * @return Chain
      */
-    public function unique($sortFlags = SORT_STRING)
+    public function unique(int $sortFlags = SORT_STRING): Chain
     {
         $this->array = array_unique($this->array, $sortFlags);
 

@@ -22,7 +22,7 @@ trait Filter
      *
      * @return Chain
      */
-    public function filter(callable $callback)
+    public function filter(callable $callback): Chain
     {
         $this->array = array_filter($this->array, $callback, ARRAY_FILTER_USE_BOTH);
 

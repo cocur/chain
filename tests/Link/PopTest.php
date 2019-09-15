@@ -15,10 +15,10 @@ class PopTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Pop::pop()
      */
-    public function popPopsElementOff()
+    public function popPopsElementOff(): void
     {
-        /** @var \Cocur\Chain\Link\Pop $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Pop');
+        /** @var Pop $mock */
+        $mock        = $this->getMockForTrait(Pop::class);
         $mock->array = [0, 1];
 
         $this->assertEquals(1, $mock->pop());

@@ -11,7 +11,7 @@ namespace Cocur\Chain\Link;
 trait Sum
 {
     /**
-     * @return number
+     * @return int|float
      */
     public function sum()
     {

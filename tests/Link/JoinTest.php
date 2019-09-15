@@ -15,10 +15,10 @@ class JoinTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Join::join()
      */
-    public function joinReturnsStringWithoutGlue()
+    public function joinReturnsStringWithoutGlue(): void
     {
-        /** @var \Cocur\Chain\Link\Join $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Join');
+        /** @var Join $mock */
+        $mock        = $this->getMockForTrait(Join::class);
         $mock->array = ['a', 'b', 'c'];
 
         $this->assertEquals('abc', $mock->join());

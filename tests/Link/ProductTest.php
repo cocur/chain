@@ -15,10 +15,10 @@ class ProductTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Product::product()
      */
-    public function productMultipliesElements()
+    public function productMultipliesElements(): void
     {
-        /** @var \Cocur\Chain\Link\Product $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Product');
+        /** @var Product $mock */
+        $mock        = $this->getMockForTrait(Product::class);
         $mock->array = [2, 3];
 
         $this->assertEquals(6, $mock->product());

@@ -15,10 +15,10 @@ class LastTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\Last::last()
      */
-    public function lastReturnsLastElement()
+    public function lastReturnsLastElement(): void
     {
-        /** @var \Cocur\Chain\Link\Filter $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\Last');
+        /** @var Last $mock */
+        $mock        = $this->getMockForTrait(Last::class);
         $mock->array = [0, 1, 2, 3];
 
         $this->assertEquals(3, $mock->last());

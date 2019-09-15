@@ -3,6 +3,7 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
+use Cocur\Chain\ChainTest;
 
 /**
  * IntersectAssocTest.
@@ -17,11 +18,12 @@ class IntersectAssocTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\IntersectAssoc::intersectAssoc()
      */
-    public function intersectAssocIntersectsWithArray()
+    public function intersectAssocIntersectsWithArray(): void
     {
-        /** @var \Cocur\Chain\Link\IntersectAssoc $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\IntersectAssoc');
+        /** @var IntersectAssoc $mock */
+        $mock        = $this->getMockForTrait(IntersectAssoc::class);
         $mock->array = [1, 2, 3];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersectAssoc([3, 2, 1]);
 
         $this->assertContains(2, $mock->array);
@@ -33,11 +35,12 @@ class IntersectAssocTest extends \PHPUnit\Framework\TestCase
      * @test
      * @covers Cocur\Chain\Link\IntersectAssoc::intersectAssoc()
      */
-    public function intersectAssocIntersectsWithChain()
+    public function intersectAssocIntersectsWithChain(): void
     {
-        /** @var \Cocur\Chain\Link\IntersectAssoc $mock */
-        $mock        = $this->getMockForTrait('Cocur\Chain\Link\IntersectAssoc');
+        /** @var IntersectAssoc $mock */
+        $mock        = $this->getMockForTrait(IntersectAssoc::class);
         $mock->array = [1, 2, 3];
+        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersectAssoc(Chain::create([3, 2, 1]));
 
         $this->assertContains(2, $mock->array);
