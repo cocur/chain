@@ -69,6 +69,16 @@ class ChainTest extends \PHPUnit\Framework\TestCase
     /**
      * @test
      */
+    public function chainIsExtensible(): void
+    {
+        $c = new Chain();
+
+        $this->assertTrue($c instanceof ExtensibleChain);
+    }
+
+    /**
+     * @test
+     */
     public function chainHasTraits(): void
     {
         $c = new Chain();

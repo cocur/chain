@@ -49,7 +49,7 @@ use Countable;
  * @author    Florian Eckerstorfer
  * @copyright 2015-2017 Florian Eckerstorfer
  */
-class Chain extends AbstractChain implements Countable
+class Chain extends ExtensibleChain implements Countable
 {
     use ChangeKeyCase,
         Combine,
