@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use Cocur\Chain\ChainTest;
 
 /**
  * IntersectTest.
@@ -22,7 +21,6 @@ class IntersectTest extends \PHPUnit\Framework\TestCase
         /** @var Intersect $mock */
         $mock        = $this->getMockForTrait(Intersect::class);
         $mock->array = [1, 2, 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersect([3, 4, 5]);
 
         $this->assertContains(3, $mock->array);
@@ -39,7 +37,6 @@ class IntersectTest extends \PHPUnit\Framework\TestCase
         /** @var Intersect $mock */
         $mock        = $this->getMockForTrait(Intersect::class);
         $mock->array = [1, 2, 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersect(Chain::create([3, 4, 5]));
 
         $this->assertContains(3, $mock->array);

@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * SpliceTest.
  *
@@ -23,7 +21,6 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(2);
         $this->assertSame(['lemon', 'orange'], $mock->array);
     }
@@ -38,7 +35,6 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(1, -1);
         $this->assertSame(['lemon', 'apple'], $mock->array);
     }
@@ -53,7 +49,6 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(1, 4, 'kiwi');
         $this->assertSame(['lemon', 'kiwi'], $mock->array);
     }
@@ -68,7 +63,6 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Splice::class);
         $mock->array = ['lemon', 'orange', 'banana', 'apple'];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->splice(-1, 1, ['kiwi', 'pineapple']);
         $this->assertSame(['lemon', 'orange', 'banana', 'kiwi', 'pineapple'], $mock->array);
     }

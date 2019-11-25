@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Class SortKeys.
  *
@@ -18,9 +16,9 @@ trait SortKeys
      * @param int|callable $sortBy
      * @param array        $options
      *
-     * @return Chain
+     * @return self
      */
-    public function sortKeys($sortBy = SORT_REGULAR, array $options = []): Chain
+    public function sortKeys($sortBy = SORT_REGULAR, array $options = []): self
     {
         if ($sortBy && is_callable($sortBy)) {
             uksort($this->array, $sortBy);

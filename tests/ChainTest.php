@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain;
 
-use PHPUnit\Framework\MockObject\MockObject;
-
 /**
  * ChainTest.
  *
@@ -13,23 +11,6 @@ use PHPUnit\Framework\MockObject\MockObject;
  */
 class ChainTest extends \PHPUnit\Framework\TestCase
 {
-    /**
-     * Generate the expected TypeError that will be emitted when mocking Trait using Fluent design.
-     * This serve two purposes:
-     * - swallow the error and keep the test passing
-     * - validate that the method is effectively fluent.
-     *
-     * @param MockObject $mockedTrait
-     * @return string
-     */
-    public static function getFluentTypeErrorForMockedTrait(MockObject $mockedTrait): string
-    {
-        $mockClass = get_class($mockedTrait);
-        $traitClass = substr($mockClass, 5, -9);
-        return sprintf('/Return value of %s::.*?\\(\\) must be an instance of %s, instance of %s returned/',
-            $traitClass, str_replace('\\', '\\\\', Chain::class), $mockClass);
-    }
-
     /**
      * @test
      * @covers Cocur\Chain\Chain::__construct()

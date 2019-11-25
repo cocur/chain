@@ -102,9 +102,9 @@ class Chain extends AbstractChain implements Countable
     /**
      * @param array $array
      *
-     * @return Chain
+     * @return self
      */
-    public static function create(array $array = []): Chain
+    public static function create(array $array = []): self
     {
         return new static($array);
     }
@@ -115,9 +115,9 @@ class Chain extends AbstractChain implements Countable
      * @param array  $options   If the option `regexp` is `true` the string is split by using `preg_split()`, otherwise
      *                          `explode()` is used.
      *
-     * @return Chain
+     * @return self
      */
-    public static function createFromString(string $delimiter, string $string, array $options = []): Chain
+    public static function createFromString(string $delimiter, string $string, array $options = []): self
     {
         $options = array_merge(['regexp' => false], $options);
         $chain   = new static();

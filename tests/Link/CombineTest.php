@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use Cocur\Chain\ChainTest;
 
 
 /**
@@ -26,7 +25,6 @@ class CombineTest extends \PHPUnit\Framework\TestCase
         $keys   = Chain::create(['foo', 'bar']);
         $values = Chain::create([42, 43]);
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertEquals(['foo' => 42, 'bar' => 43], $mock->combine($keys, $values)->array);
     }
 
@@ -42,7 +40,6 @@ class CombineTest extends \PHPUnit\Framework\TestCase
         $keys   = ['foo', 'bar'];
         $values = [42, 43];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertEquals(['foo' => 42, 'bar' => 43], $mock->combine($keys, $values)->array);
     }
 }

@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * SliceTest.
  *
@@ -22,7 +20,6 @@ class SliceTest extends \PHPUnit\Framework\TestCase
         /** @var Slice $mock */
         $mock        = $this->getMockForTrait(Slice::class);
         $mock->array = [0, 1, 2, 3, 4, 5];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->slice(1, 3);
 
         $this->assertEquals([1, 2, 3], $mock->array);
@@ -37,7 +34,6 @@ class SliceTest extends \PHPUnit\Framework\TestCase
         /** @var Slice $mock */
         $mock        = $this->getMockForTrait(Slice::class);
         $mock->array = [0, 1, 2, 3, 4, 5];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $result      = $mock->slice(1, 3)->array;
         $this->assertEquals([1, 2, 3], $result);
     }

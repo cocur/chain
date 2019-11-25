@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Pad.
  *
@@ -16,9 +14,9 @@ trait Pad
      * @param int   $size
      * @param mixed $value
      *
-     * @return Chain
+     * @return self
      */
-    public function pad(int $size, $value): Chain
+    public function pad(int $size, $value): self
     {
         $this->array = array_pad($this->array, $size, $value);
 

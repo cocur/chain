@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use Cocur\Chain\ChainTest;
 
 /**
  * MergeTest.
@@ -22,7 +21,6 @@ class MergeTest extends \PHPUnit\Framework\TestCase
         /** @var Merge $mock */
         $mock        = $this->getMockForTrait(Merge::class);
         $mock->array = [0, 1, 2];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->merge([3, 4]);
 
         $this->assertEquals([0, 1, 2, 3, 4], $mock->array);
@@ -37,7 +35,6 @@ class MergeTest extends \PHPUnit\Framework\TestCase
         /** @var Merge $mock */
         $mock        = $this->getMockForTrait(Merge::class);
         $mock->array = [0, 1, 2];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->merge(Chain::create([3, 4]));
 
         $this->assertEquals([0, 1, 2, 3, 4], $mock->array);
@@ -52,7 +49,6 @@ class MergeTest extends \PHPUnit\Framework\TestCase
         /** @var Merge $mock */
         $mock        = $this->getMockForTrait(Merge::class);
         $mock->array = ['foo' => [0, 1], 'bar' => ['a', 'b']];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->merge(['foo' => [2, 3], 'bar' => ['c', 'd']], ['recursive' => true]);
 
         $this->assertEquals(['foo' => [0, 1, 2, 3], 'bar' => ['a', 'b', 'c', 'd']], $mock->array);
@@ -67,7 +63,6 @@ class MergeTest extends \PHPUnit\Framework\TestCase
         /** @var Merge $mock */
         $mock        = $this->getMockForTrait(Merge::class);
         $mock->array = ['foo' => [0, 1], 'bar' => ['a', 'b']];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->merge(Chain::create(['foo' => [2, 3], 'bar' => ['c', 'd']]), ['recursive' => true]);
 
         $this->assertEquals(['foo' => [0, 1, 2, 3], 'bar' => ['a', 'b', 'c', 'd']], $mock->array);

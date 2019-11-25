@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Reverse.
  *
@@ -15,9 +13,9 @@ trait Reverse
     /**
      * @param bool $preserveKeys
      *
-     * @return Chain
+     * @return self
      */
-    public function reverse(bool $preserveKeys = false): Chain
+    public function reverse(bool $preserveKeys = false): self
     {
         $this->array = array_reverse($this->array, $preserveKeys);
 

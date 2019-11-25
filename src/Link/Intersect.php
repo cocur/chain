@@ -15,9 +15,9 @@ trait Intersect
     /**
      * @param Chain|array $array2
      *
-     * @return Chain
+     * @return self
      */
-    public function intersect($array2): Chain
+    public function intersect($array2): self
     {
         $this->array = array_intersect($this->array, $array2 instanceof Chain ? $array2->array : $array2);
 

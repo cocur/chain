@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use Cocur\Chain\ChainTest;
 
 /**
  * IntersectKeyTest.
@@ -23,7 +22,6 @@ class IntersectKeyTest extends \PHPUnit\Framework\TestCase
         /** @var IntersectKey $mock */
         $mock        = $this->getMockForTrait(IntersectKey::class);
         $mock->array = ['a' => 1, 'b' => 2, 'c' => 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersectKey(['a' => 3, 'b' => 4, 'd' => 5]);
 
         $this->assertEquals(['a' => 1, 'b' => 2], $mock->array);
@@ -38,7 +36,6 @@ class IntersectKeyTest extends \PHPUnit\Framework\TestCase
         /** @var IntersectKey $mock */
         $mock        = $this->getMockForTrait(IntersectKey::class);
         $mock->array = ['a' => 1, 'b' => 2, 'c' => 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->intersectKey(Chain::create(['a' => 3, 'b' => 4, 'd' => 5]));
 
         $this->assertEquals(['a' => 1, 'b' => 2], $mock->array);

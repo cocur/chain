@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Values.
  *
@@ -13,9 +11,9 @@ use Cocur\Chain\Chain;
 trait Values
 {
     /**
-     * @return Chain
+     * @return self
      */
-    public function values(): Chain
+    public function values(): self
     {
         $this->array = array_values($this->array);
 

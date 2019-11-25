@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Slice.
  *
@@ -17,9 +15,9 @@ trait Slice
      * @param int|null $length
      * @param bool     $preserveKeys
      *
-     * @return Chain
+     * @return self
      */
-    public function slice(int $offset, ?int $length = null, bool $preserveKeys = false): Chain
+    public function slice(int $offset, ?int $length = null, bool $preserveKeys = false): self
     {
         $this->array = array_slice($this->array, $offset, $length, $preserveKeys);
 

@@ -20,9 +20,9 @@ trait Diff
      *
      * @param Chain|array $array2 An array or instance of `Cocur\Chain\Chain` to compare against.
      *
-     * @return Chain
+     * @return self
      */
-    public function diff($array2): Chain
+    public function diff($array2): self
     {
         $this->array = array_diff(
             $this->array,

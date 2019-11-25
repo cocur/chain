@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * PadTest.
  *
@@ -22,7 +20,6 @@ class PadTest extends \PHPUnit\Framework\TestCase
         /** @var Pad $mock */
         $mock        = $this->getMockForTrait(Pad::class);
         $mock->array = [0];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->pad(3, 5);
 
         $this->assertEquals([0, 5, 5], $mock->array);

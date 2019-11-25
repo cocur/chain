@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * FlatMap.
  *
@@ -14,9 +12,9 @@ trait FlatMap
     /**
      * @param callable $callback
      *
-     * @return Chain
+     * @return self
      */
-    public function flatMap(callable $callback): Chain
+    public function flatMap(callable $callback): self
     {
         $flattened = [];
         foreach ($this->array as $index => $element) {

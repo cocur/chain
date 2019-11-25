@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * FillTest.
  *
@@ -19,9 +17,6 @@ class FillTest extends \PHPUnit\Framework\TestCase
      */
     public function fillCreatesAFilledChain(): void
     {
-        $fluentTypeErrorMessage = sprintf('Return value of %1$s::fill() must be an instance of %2$s, instance of %1$s returned',
-            ChainMock::class, Chain::class);
-        $this->expectExceptionMessage($fluentTypeErrorMessage);
         $mock = ChainMock::fill(0, 10);
 
         $this->assertIsArray($mock->array);

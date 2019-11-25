@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Class ChangeKeyCase.
  *
@@ -18,9 +16,9 @@ trait ChangeKeyCase
      *
      * @param int $case Either `CASE_UPPER` or `CASE_LOWER` (default).
      *
-     * @return Chain
+     * @return self
      */
-    public function changeKeyCase(int $case = CASE_LOWER): Chain
+    public function changeKeyCase(int $case = CASE_LOWER): self
     {
         $this->array = array_change_key_case($this->array, $case);
 

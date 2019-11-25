@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * PushTest.
  *
@@ -22,7 +20,6 @@ class PushTest extends \PHPUnit\Framework\TestCase
         /** @var Push $mock */
         $mock        = $this->getMockForTrait(Push::class);
         $mock->array = [0];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->push(1);
 
         $this->assertEquals([0, 1], $mock->array);

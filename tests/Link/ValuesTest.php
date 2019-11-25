@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * ValuesTest.
  *
@@ -22,7 +20,6 @@ class ValuesTest extends \PHPUnit\Framework\TestCase
         /** @var Values $mock */
         $mock        = $this->getMockForTrait(Values::class);
         $mock->array = ['foo' => 1, 'bar' => 2];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->values();
 
         $this->assertEquals([1, 2], $mock->array);

@@ -18,9 +18,9 @@ trait Combine
      *                            will be converted to string.
      * @param Chain|array $values Array or instance of `Cocur\Chain\Chain` of values to be used.
      *
-     * @return Chain
+     * @return self
      */
-    public function combine($keys, $values): Chain
+    public function combine($keys, $values): self
     {
         $this->array = array_combine(
             $keys instanceof Chain ? $keys->array : $keys,
