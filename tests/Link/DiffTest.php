@@ -3,7 +3,6 @@
 namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
-use Cocur\Chain\ChainTest;
 
 /**
  * DiffTest.
@@ -23,7 +22,6 @@ class DiffTest extends \PHPUnit\Framework\TestCase
         /** @var Diff $mock */
         $mock        = $this->getMockForTrait(Diff::class);
         $mock->array = [0, 1, 2];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->diff([1, 2, 3]);
 
         $this->assertEquals([0], $mock->array);
@@ -38,7 +36,6 @@ class DiffTest extends \PHPUnit\Framework\TestCase
         /** @var Diff $mock */
         $mock        = $this->getMockForTrait(Diff::class);
         $mock->array = [0, 1, 2];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->diff(Chain::create([1, 2, 3]));
 
         $this->assertEquals([0], $mock->array);

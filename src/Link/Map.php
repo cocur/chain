@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Map.
  *
@@ -15,9 +13,9 @@ trait Map
     /**
      * @param callable $callback
      *
-     * @return Chain
+     * @return self
      */
-    public function map(callable $callback): Chain
+    public function map(callable $callback): self
     {
         foreach ($this->array as $index => $element) {
             $this->array[$index] = $callback($element, $index);

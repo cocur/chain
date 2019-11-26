@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use \PHPUnit\Framework\TestCase;
-
 /**
  * FirstTest.
  *

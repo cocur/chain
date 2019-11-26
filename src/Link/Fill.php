@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Fill.
  *
@@ -23,9 +21,9 @@ trait Fill
      * @param int   $num        Number of elements to insert. Must be greater than or equal to zero.
      * @param mixed $value      Value to use for filling.
      *
-     * @return Chain
+     * @return self
      */
-    public static function fill(int $startIndex, int $num, $value = null): Chain
+    public static function fill(int $startIndex, int $num, $value = null): self
     {
         return new self(array_fill($startIndex, $num, $value));
     }

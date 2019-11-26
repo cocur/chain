@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * FilterTest.
  *
@@ -22,7 +20,6 @@ class FilterTest extends \PHPUnit\Framework\TestCase
         /** @var Filter $mock */
         $mock        = $this->getMockForTrait(Filter::class);
         $mock->array = [0, 1, 2, 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->filter(function ($v): bool { return $v & 1; });
 
         $this->assertCount(2, $mock->array);
@@ -41,7 +38,6 @@ class FilterTest extends \PHPUnit\Framework\TestCase
         /** @var Filter $mock */
         $mock        = $this->getMockForTrait(Filter::class);
         $mock->array = ["0" => 0, "1" => 1, "2" => 2, "3" => 3];
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $mock->filter(function ($v, $k): bool { return intval($k) & 1; });
 
         $this->assertCount(2, $mock->array);

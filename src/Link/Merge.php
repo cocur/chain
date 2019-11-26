@@ -20,9 +20,9 @@ trait Merge
      * @param Chain|array $array   Array to merge with
      * @param array       $options Options, including `recursive` to merge arrays recursive.
      *
-     * @return Chain
+     * @return self
      */
-    public function merge($array, array $options = []): Chain
+    public function merge($array, array $options = []): self
     {
         $options = array_merge(['recursive' => false], $options);
 

@@ -15,9 +15,9 @@ trait Replace
     /**
      * @param Chain|array $array
      *
-     * @return Chain
+     * @return self
      */
-    public function replace($array): Chain
+    public function replace($array): self
     {
         $this->array = array_replace($this->array, $array instanceof Chain ? $chain->array : $array);
 

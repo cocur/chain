@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Unshift.
  *
@@ -15,9 +13,9 @@ trait Unshift
     /**
      * @param mixed $element
      *
-     * @return Chain
+     * @return self
      */
-    public function unshift($element): Chain
+    public function unshift($element): self
     {
         array_unshift($this->array, $element);
 

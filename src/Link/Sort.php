@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Class Sort.
  *
@@ -18,9 +16,9 @@ trait Sort
      * @param int|callable $sortBy
      * @param array        $options
      *
-     * @return Chain
+     * @return self
      */
-    public function sort($sortBy = SORT_REGULAR, array $options = []): Chain
+    public function sort($sortBy = SORT_REGULAR, array $options = []): self
     {
         if (!$sortBy) {
             $sortBy = SORT_REGULAR;

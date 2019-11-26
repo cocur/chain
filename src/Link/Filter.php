@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Filter.
  *
@@ -20,9 +18,9 @@ trait Filter
      *
      * @param callable $callback The callback function to use.
      *
-     * @return Chain
+     * @return self
      */
-    public function filter(callable $callback): Chain
+    public function filter(callable $callback): self
     {
         $this->array = array_filter($this->array, $callback, ARRAY_FILTER_USE_BOTH);
 

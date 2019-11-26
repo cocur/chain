@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\ChainTest;
-
 /**
  * SortKeysTest.
  *
@@ -24,7 +22,6 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(SortKeys::class);
         $mock->array = ['lemon' => 1, 'orange' => 2, 'banana' => 3, 'apple' => 4];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertSame(['apple' => 4, 'banana' => 3, 'lemon' => 1, 'orange' => 2], $mock->sortKeys()->array);
     }
 
@@ -39,7 +36,6 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(SortKeys::class);
         $mock->array = ['111' => 1, '21' => 2, '112' => 3, '22' => 4];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertSame(['21' => 2, '22' => 4, '111' => 1, '112' => 3], $mock->sortKeys()->array);
     }
 
@@ -54,7 +50,6 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(SortKeys::class);
         $mock->array = ['lemon' => 1, 'orange' => 2, 'banana' => 3, 'apple' => 4];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         $this->assertSame(
             ['orange' => 2, 'lemon' => 1, 'banana' => 3, 'apple' => 4],
             $mock->sortKeys(SORT_REGULAR, ['reverse' => true])->array
@@ -71,7 +66,6 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(SortKeys::class);
         $mock->array = ['kiwi' => 2, 'banana' => 3, 'apple' => 4];
 
-        $this->expectExceptionMessageRegExp(ChainTest::getFluentTypeErrorForMockedTrait($mock));
         // sort by strlen
         $this->assertSame(['kiwi' => 2, 'apple' => 4, 'banana' => 3], $mock->sortKeys(function ($a, $b) {
             $a = strlen($a);

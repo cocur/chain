@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Shuffle.
  *
@@ -13,9 +11,9 @@ use Cocur\Chain\Chain;
 trait Shuffle
 {
     /**
-     * @return Chain
+     * @return self
      */
-    public function shuffle(): Chain
+    public function shuffle(): self
     {
         shuffle($this->array);
 

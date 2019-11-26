@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-use Cocur\Chain\Chain;
-
 /**
  * Unique.
  *
@@ -15,9 +13,9 @@ trait Unique
     /**
      * @param int $sortFlags
      *
-     * @return Chain
+     * @return self
      */
-    public function unique(int $sortFlags = SORT_STRING): Chain
+    public function unique(int $sortFlags = SORT_STRING): self
     {
         $this->array = array_unique($this->array, $sortFlags);
 
