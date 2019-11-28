@@ -13,7 +13,7 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Splice::splice()
+     * @covers \Cocur\Chain\Link\Splice::splice()
      */
     public function spliceRemovesAPortionOfTheArray(): void
     {
@@ -27,7 +27,7 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Splice::splice()
+     * @covers \Cocur\Chain\Link\Splice::splice()
      */
     public function spliceRemovesAPortionOfTheArrayWithNegativeLength(): void
     {
@@ -41,7 +41,7 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Splice::splice()
+     * @covers \Cocur\Chain\Link\Splice::splice()
      */
     public function spliceRemovesAPortionOfTheArrayWithReplacement(): void
     {
@@ -55,7 +55,7 @@ class SpliceTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Splice::splice()
+     * @covers \Cocur\Chain\Link\Splice::splice()
      */
     public function spliceRemovesAPortionOfTheArrayWithArrayReplacement(): void
     {

@@ -13,8 +13,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithDefaultSorting(): void
     {
@@ -27,8 +27,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithAlternativeSortingAlgorithm(): void
     {
@@ -41,8 +41,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithDefaultSortingAndAssocOption(): void
     {
@@ -58,8 +58,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithDefaultSortingAndReverseOption(): void
     {
@@ -75,8 +75,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithDefaultSortingAndAssocAndReverseOption(): void
     {
@@ -92,8 +92,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithCallback()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithCallback()
      */
     public function sortWithFunction(): void
     {
@@ -112,8 +112,8 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithCallback()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithCallback()
      */
     public function sortWithFunctionAndAssocOption(): void
     {
@@ -132,13 +132,13 @@ class SortTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sort::sort()
-     * @covers Cocur\Chain\Link\Sort::sortWithFlags()
+     * @covers \Cocur\Chain\Link\Sort::sort()
+     * @covers \Cocur\Chain\Link\Sort::sortWithFlags()
      */
     public function sortWithNatCaseSort(): void
     {
         /** @var Sort $mock */
-        $mock = $this->getMockForTrait(Sort::class);
+        $mock        = $this->getMockForTrait(Sort::class);
         $mock->array = ['IMG0.png', 'img12.png', 'img10.png', 'img2.png', 'img1.png', 'IMG3.png'];
 
         $result = $mock->sort(SORT_NATURAL | SORT_FLAG_CASE);

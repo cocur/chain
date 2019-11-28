@@ -13,8 +13,8 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\SortKeys::sortKeys()
-     * @covers Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeys()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
      */
     public function sortKeysWithDefaultSorting(): void
     {
@@ -27,8 +27,8 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\SortKeys::sortKeys()
-     * @covers Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeys()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
      */
     public function sortKeysWithAlternativeSortingAlgorithm(): void
     {
@@ -41,8 +41,8 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\SortKeys::sortKeys()
-     * @covers Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeys()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeysWithFlags()
      */
     public function sortKeysWithDefaultSortingAndReverseOption(): void
     {
@@ -58,7 +58,7 @@ class SortKeysTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\SortKeys::sortKeys()
+     * @covers \Cocur\Chain\Link\SortKeys::sortKeys()
      */
     public function sortKeysWithFunction(): void
     {

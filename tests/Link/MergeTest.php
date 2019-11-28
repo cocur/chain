@@ -14,7 +14,7 @@ class MergeTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Merge::merge()
+     * @covers \Cocur\Chain\Link\Merge::merge()
      */
     public function mergeMergesArray(): void
     {
@@ -28,7 +28,7 @@ class MergeTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Merge::merge()
+     * @covers \Cocur\Chain\Link\Merge::merge()
      */
     public function mergeMergesChain(): void
     {
@@ -42,7 +42,7 @@ class MergeTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Merge::merge()
+     * @covers \Cocur\Chain\Link\Merge::merge()
      */
     public function mergeMergesRecursiveArray(): void
     {
@@ -56,7 +56,7 @@ class MergeTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Merge::merge()
+     * @covers \Cocur\Chain\Link\Merge::merge()
      */
     public function mergeMergesRecursiveChain(): void
     {

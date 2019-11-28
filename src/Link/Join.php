@@ -11,12 +11,12 @@ namespace Cocur\Chain\Link;
 trait Join
 {
     /**
-     * Join array elements with a string
+     * Join array elements with a string.
      *
      * @param string $glue
      *
-     * @return string Returns a string containing a string representation of all the array elements in the same order,
-     *                with the glue string between each element.
+     * @return string returns a string containing a string representation of all the array elements in the same order,
+     *                with the glue string between each element
      */
     public function join(string $glue = ''): string
     {

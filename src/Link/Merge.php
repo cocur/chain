@@ -18,7 +18,7 @@ trait Merge
      * Merge the elements of one array with the elements of the array in the Chain.
      *
      * @param Chain|array $array   Array to merge with
-     * @param array       $options Options, including `recursive` to merge arrays recursive.
+     * @param array       $options options, including `recursive` to merge arrays recursive
      *
      * @return self
      */

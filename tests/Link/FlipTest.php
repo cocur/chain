@@ -13,7 +13,7 @@ class FlipTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Flip::flip()
+     * @covers \Cocur\Chain\Link\Flip::flip()
      */
     public function flipExchangesKeysAndValues(): void
     {

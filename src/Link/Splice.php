@@ -11,11 +11,11 @@ namespace Cocur\Chain\Link;
 trait Splice
 {
     /**
-     * Remove a portion of the array and replace it with something else
+     * Remove a portion of the array and replace it with something else.
      *
-     * @param int $offset
+     * @param int      $offset
      * @param int|null $length
-     * @param array $replacement
+     * @param array    $replacement
      *
      * @return self
      */

@@ -13,7 +13,7 @@ class KeyExistsTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\KeyExists::keyExists()
+     * @covers \Cocur\Chain\Link\KeyExists::keyExists()
      */
     public function keyExistsReturnsTrueIfKeyExists(): void
     {
@@ -27,7 +27,7 @@ class KeyExistsTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\KeyExists::keyExists()
+     * @covers \Cocur\Chain\Link\KeyExists::keyExists()
      */
     public function keyExistsReturnsFalseIfKeyDoesNotExist(): void
     {

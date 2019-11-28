@@ -13,7 +13,7 @@ class PopTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Pop::pop()
+     * @covers \Cocur\Chain\Link\Pop::pop()
      */
     public function popPopsElementOff(): void
     {

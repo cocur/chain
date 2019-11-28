@@ -13,7 +13,7 @@ class ReplaceTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Replace::replace()
+     * @covers \Cocur\Chain\Link\Replace::replace()
      */
     public function replaceReplacesValuesInArray(): void
     {

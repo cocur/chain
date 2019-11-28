@@ -13,7 +13,7 @@ class LastTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Last::last()
+     * @covers \Cocur\Chain\Link\Last::last()
      */
     public function lastReturnsLastElement(): void
     {

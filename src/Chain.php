@@ -51,45 +51,45 @@ use Countable;
  */
 class Chain extends AbstractChain implements Countable
 {
-    use ChangeKeyCase,
-        Combine,
-        Count,
-        CountValues,
-        Diff,
-        Fill,
-        Filter,
-        Find,
-        First,
-        FlatMap,
-        Flip,
-        Intersect,
-        IntersectAssoc,
-        IntersectKey,
-        Join,
-        KeyExists,
-        Keys,
-        Last,
-        Map,
-        Merge,
-        Pad,
-        Pop,
-        Product,
-        Push,
-        Rand,
-        Reduce,
-        Replace,
-        Reverse,
-        Search,
-        Shift,
-        Shuffle,
-        Slice,
-        Sort,
-        SortKeys,
-        Splice,
-        Sum,
-        Unique,
-        Unshift,
-        Values;
+    use ChangeKeyCase;
+    use Combine;
+    use Count;
+    use CountValues;
+    use Diff;
+    use Fill;
+    use Filter;
+    use Find;
+    use First;
+    use FlatMap;
+    use Flip;
+    use Intersect;
+    use IntersectAssoc;
+    use IntersectKey;
+    use Join;
+    use KeyExists;
+    use Keys;
+    use Last;
+    use Map;
+    use Merge;
+    use Pad;
+    use Pop;
+    use Product;
+    use Push;
+    use Rand;
+    use Reduce;
+    use Replace;
+    use Reverse;
+    use Search;
+    use Shift;
+    use Shuffle;
+    use Slice;
+    use Sort;
+    use SortKeys;
+    use Splice;
+    use Sum;
+    use Unique;
+    use Unshift;
+    use Values;
 
     /**
      * @param array $array
@@ -112,8 +112,8 @@ class Chain extends AbstractChain implements Countable
     /**
      * @param string $delimiter If the option `regexp` is `true` this must be a regular expression
      * @param string $string
-     * @param array  $options   If the option `regexp` is `true` the string is split by using `preg_split()`, otherwise
-     *                          `explode()` is used.
+     * @param array  $options   if the option `regexp` is `true` the string is split by using `preg_split()`, otherwise
+     *                          `explode()` is used
      *
      * @return self
      */

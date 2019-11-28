@@ -13,7 +13,7 @@ class SumTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Sum::sum()
+     * @covers \Cocur\Chain\Link\Sum::sum()
      */
     public function sumReturnsSumOfArray(): void
     {

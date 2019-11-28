@@ -13,7 +13,7 @@ class RandTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Rand::rand()
+     * @covers \Cocur\Chain\Link\Rand::rand()
      */
     public function randSelectsRandomElement(): void
     {
@@ -22,6 +22,6 @@ class RandTest extends \PHPUnit\Framework\TestCase
         $mock->array = [0, 1, 2];
 
         $rand = $mock->rand();
-        $this->assertTrue($rand === 0 || $rand === 1 || $rand === 2);
+        $this->assertTrue(0 === $rand || 1 === $rand || 2 === $rand);
     }
 }

@@ -13,7 +13,7 @@ class KeysTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Keys::keys()
+     * @covers \Cocur\Chain\Link\Keys::keys()
      */
     public function keysChangesArrayToKeys(): void
     {

@@ -13,7 +13,7 @@ class ShuffleTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Shuffle::shuffle()
+     * @covers \Cocur\Chain\Link\Shuffle::shuffle()
      */
     public function shuffleRandomizesChain(): void
     {

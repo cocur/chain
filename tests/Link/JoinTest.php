@@ -13,7 +13,7 @@ class JoinTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Join::join()
+     * @covers \Cocur\Chain\Link\Join::join()
      */
     public function joinReturnsStringWithoutGlue(): void
     {
