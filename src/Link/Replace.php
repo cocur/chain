@@ -19,7 +19,7 @@ trait Replace
      */
     public function replace($array): self
     {
-        $this->array = array_replace($this->array, $array instanceof Chain ? $chain->array : $array);
+        $this->array = array_replace($this->array, $array instanceof Chain ? $array->array : $array);
 
         return $this;
     }
