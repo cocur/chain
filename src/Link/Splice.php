@@ -21,7 +21,7 @@ trait Splice
      */
     public function splice(int $offset, ?int $length = null, $replacement = []): self
     {
-        if ($length) {
+        if (func_num_args() > 1) {
             array_splice($this->array, $offset, $length, $replacement);
         } else {
             array_splice($this->array, $offset);
