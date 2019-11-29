@@ -13,7 +13,7 @@ class UnshiftTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Unshift::unshift()
+     * @covers \Cocur\Chain\Link\Unshift::unshift()
      */
     public function unshiftPrependsElement(): void
     {

@@ -13,7 +13,7 @@ class SliceTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Slice::slice()
+     * @covers \Cocur\Chain\Link\Slice::slice()
      */
     public function sliceSlicesArray(): void
     {
@@ -27,7 +27,7 @@ class SliceTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Slice::slice()
+     * @covers \Cocur\Chain\Link\Slice::slice()
      */
     public function sliceCanChain(): void
     {

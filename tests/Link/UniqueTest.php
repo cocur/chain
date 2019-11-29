@@ -13,7 +13,7 @@ class UniqueTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Unique::unique()
+     * @covers \Cocur\Chain\Link\Unique::unique()
      */
     public function uniqueRemovesDuplicates(): void
     {

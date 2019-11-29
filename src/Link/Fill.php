@@ -19,7 +19,7 @@ trait Fill
      * @param int   $startIndex The first index of the array. If `startIndex` is negative, the first index of the
      *                          returned array will be `startIndex` and the following indices will start from zero.
      * @param int   $num        Number of elements to insert. Must be greater than or equal to zero.
-     * @param mixed $value      Value to use for filling.
+     * @param mixed $value      value to use for filling
      *
      * @return self
      */

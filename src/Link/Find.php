@@ -3,9 +3,8 @@
 namespace Cocur\Chain\Link;
 
 /**
- * Find
+ * Find.
  *
- * @package   Cocur\Chain\Link
  * @author    Christoph Rosse
  * @copyright 2017 Christoph Rosse
  */
@@ -16,7 +15,7 @@ trait Find
      *
      * @param callable $callback
      *
-     * @return mixed|boolean Found element, `false` if no result is found
+     * @return mixed|bool Found element, `false` if no result is found
      */
     public function find(callable $callback)
     {

@@ -11,17 +11,17 @@ namespace Cocur\Chain\Link;
 trait Splice
 {
     /**
-     * Remove a portion of the array and replace it with something else
+     * Remove a portion of the array and replace it with something else.
      *
-     * @param int $offset
+     * @param int      $offset
      * @param int|null $length
-     * @param array $replacement
+     * @param array    $replacement
      *
      * @return self
      */
     public function splice(int $offset, ?int $length = null, $replacement = []): self
     {
-        if ($length) {
+        if (func_num_args() > 1) {
             array_splice($this->array, $offset, $length, $replacement);
         } else {
             array_splice($this->array, $offset);

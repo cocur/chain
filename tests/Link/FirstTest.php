@@ -13,7 +13,7 @@ class FirstTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\First::first()
+     * @covers \Cocur\Chain\Link\First::first()
      */
     public function firstReturnsFirstElement(): void
     {

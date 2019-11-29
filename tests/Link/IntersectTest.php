@@ -14,7 +14,7 @@ class IntersectTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Intersect::intersect()
+     * @covers \Cocur\Chain\Link\Intersect::intersect()
      */
     public function intersectIntersectsWithArray(): void
     {
@@ -30,7 +30,7 @@ class IntersectTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Intersect::intersect()
+     * @covers \Cocur\Chain\Link\Intersect::intersect()
      */
     public function intersectIntersectsWithChain(): void
     {

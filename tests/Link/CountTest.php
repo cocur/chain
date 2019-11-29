@@ -2,8 +2,6 @@
 
 namespace Cocur\Chain\Link;
 
-
-
 /**
  * CountTest.
  *
@@ -15,7 +13,7 @@ class CountTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Count::count()
+     * @covers \Cocur\Chain\Link\Count::count()
      */
     public function countReturnsNumberOfElements(): void
     {

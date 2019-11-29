@@ -15,7 +15,7 @@ class IntersectKeyTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\IntersectKey::intersectKey()
+     * @covers \Cocur\Chain\Link\IntersectKey::intersectKey()
      */
     public function intersectKeyIntersectsWithArray(): void
     {
@@ -29,7 +29,7 @@ class IntersectKeyTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\IntersectKey::intersectKey()
+     * @covers \Cocur\Chain\Link\IntersectKey::intersectKey()
      */
     public function intersectKeyIntersectsWithChain(): void
     {

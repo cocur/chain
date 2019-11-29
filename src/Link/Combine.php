@@ -16,7 +16,7 @@ trait Combine
      *
      * @param Chain|array $keys   Array or instance of `Cocur\Chain\Chain` of keys to be used. Illegal values for key
      *                            will be converted to string.
-     * @param Chain|array $values Array or instance of `Cocur\Chain\Chain` of values to be used.
+     * @param Chain|array $values array or instance of `Cocur\Chain\Chain` of values to be used
      *
      * @return self
      */

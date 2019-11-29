@@ -13,7 +13,7 @@ class FillTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Fill::fill()
+     * @covers \Cocur\Chain\Link\Fill::fill()
      */
     public function fillCreatesAFilledChain(): void
     {

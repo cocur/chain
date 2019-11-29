@@ -4,7 +4,6 @@ namespace Cocur\Chain\Link;
 
 use Cocur\Chain\Chain;
 
-
 /**
  * CombineTest.
  *
@@ -15,7 +14,7 @@ class CombineTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Combine::combine()
+     * @covers \Cocur\Chain\Link\Combine::combine()
      */
     public function combineValuesAndKeysWithChainTest(): void
     {
@@ -30,7 +29,7 @@ class CombineTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Combine::combine()
+     * @covers \Cocur\Chain\Link\Combine::combine()
      */
     public function combineValuesAndKeysWithArraysTest(): void
     {

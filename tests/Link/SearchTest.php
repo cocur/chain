@@ -13,7 +13,7 @@ class SearchTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Search::search()
+     * @covers \Cocur\Chain\Link\Search::search()
      */
     public function searchSearchesArrayForValue(): void
     {

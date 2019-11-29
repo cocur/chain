@@ -13,7 +13,7 @@ class ValuesTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Values::values()
+     * @covers \Cocur\Chain\Link\Values::values()
      */
     public function valuesChangesArrayToValues(): void
     {

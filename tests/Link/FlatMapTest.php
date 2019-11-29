@@ -12,14 +12,16 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\FlatMap::flatMap()
+     * @covers \Cocur\Chain\Link\FlatMap::flatMap()
      */
     public function flatMapAppliesMapToArray(): void
     {
         /** @var FlatMap $mock */
         $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['foobar', 'bar'];
-        $mock->flatMap(function ($v) { return [str_replace('bar', 'foo', $v)]; });
+        $mock->flatMap(function ($v) {
+            return [str_replace('bar', 'foo', $v)];
+        });
 
         $this->assertEquals('foofoo', $mock->array[0]);
         $this->assertEquals('foo', $mock->array[1]);
@@ -27,7 +29,7 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\FlatMap::flatMap()
+     * @covers \Cocur\Chain\Link\FlatMap::flatMap()
      */
     public function flatMapCallbackReceivesAlsoArrayKeys(): void
     {
@@ -35,7 +37,7 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['foo' => 'fizz', 'bar' => 'buzz'];
         $mock->flatMap(function ($v, $k) {
-            return $k == 'foo' ? [str_replace('fizz', 'bang', $v)] : [$v];
+            return 'foo' == $k ? [str_replace('fizz', 'bang', $v)] : [$v];
         });
 
         $this->assertEquals(['bang', 'buzz'], $mock->array);
@@ -43,7 +45,7 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\FlatMap::flatMap()
+     * @covers \Cocur\Chain\Link\FlatMap::flatMap()
      */
     public function flatMapCallbackCanReturnScalarOrArray(): void
     {
@@ -51,7 +53,7 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(FlatMap::class);
         $mock->array = ['fizz', 'buzz'];
         $mock->flatMap(function ($v, $k) {
-            return $k == 1 ? [$v] : $v;
+            return 1 == $k ? [$v] : $v;
         });
 
         $this->assertEquals(['fizz', 'buzz'], $mock->array);
@@ -59,7 +61,7 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\FlatMap::flatMap()
+     * @covers \Cocur\Chain\Link\FlatMap::flatMap()
      */
     public function flatMapAcceptsEmptyArray(): void
     {

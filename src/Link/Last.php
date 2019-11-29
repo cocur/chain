@@ -18,7 +18,9 @@ trait Last
     public function last()
     {
         // To not change the internal array pointer we invoke end() in a closure
-        $end = function ($array) { return end($array); };
+        $end = function ($array) {
+            return end($array);
+        };
 
         return $end($this->array);
     }
