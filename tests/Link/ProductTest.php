@@ -13,7 +13,7 @@ class ProductTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Product::product()
+     * @covers \Cocur\Chain\Link\Product::product()
      */
     public function productMultipliesElements(): void
     {

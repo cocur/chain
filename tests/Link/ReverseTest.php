@@ -13,7 +13,7 @@ class ReverseTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Reverse::reverse()
+     * @covers \Cocur\Chain\Link\Reverse::reverse()
      */
     public function reverseReversesTheChain(): void
     {

@@ -13,7 +13,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Chain::__construct()
+     * @covers \Cocur\Chain\Chain::__construct()
      */
     public function constructorCreatesChain(): void
     {
@@ -22,7 +22,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::create()
+     * @covers \Cocur\Chain\Chain::create()
      */
     public function createCreatesChain(): void
     {
@@ -31,7 +31,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::createFromString()
+     * @covers \Cocur\Chain\Chain::createFromString()
      */
     public function createCreatesChainBySplittingStringWithDelimiter(): void
     {
@@ -40,7 +40,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::createFromString()
+     * @covers \Cocur\Chain\Chain::createFromString()
      */
     public function createCreatesChainBySplittingStringWithRegExp(): void
     {
@@ -96,7 +96,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\AbstractChain::getIterator()
+     * @covers \Cocur\Chain\AbstractChain::getIterator()
      */
     public function chainIsTraversable(): void
     {
@@ -112,10 +112,10 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\AbstractChain::offsetExists()
-     * @covers Cocur\Chain\AbstractChain::offsetGet()
-     * @covers Cocur\Chain\AbstractChain::offsetSet()
-     * @covers Cocur\Chain\AbstractChain::offsetUnset()
+     * @covers \Cocur\Chain\AbstractChain::offsetExists()
+     * @covers \Cocur\Chain\AbstractChain::offsetGet()
+     * @covers \Cocur\Chain\AbstractChain::offsetSet()
+     * @covers \Cocur\Chain\AbstractChain::offsetUnset()
      */
     public function chainAllowsArrayAccess(): void
     {
@@ -131,7 +131,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::count()
+     * @covers \Cocur\Chain\Chain::count()
      */
     public function chainIsCountable(): void
     {
@@ -143,7 +143,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Chain::jsonSerialize()
+     * @covers \Cocur\Chain\Chain::jsonSerialize()
      */
     public function chainIsJsonSerializable(): void
     {

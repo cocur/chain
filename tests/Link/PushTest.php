@@ -13,7 +13,7 @@ class PushTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Push::push()
+     * @covers \Cocur\Chain\Link\Push::push()
      */
     public function pushPushesElementOntoTheEnd(): void
     {

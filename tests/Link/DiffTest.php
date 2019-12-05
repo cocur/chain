@@ -15,7 +15,7 @@ class DiffTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Diff::diff()
+     * @covers \Cocur\Chain\Link\Diff::diff()
      */
     public function diffDiffsChainWithArray(): void
     {
@@ -29,7 +29,7 @@ class DiffTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Diff::diff()
+     * @covers \Cocur\Chain\Link\Diff::diff()
      */
     public function diffDiffsChainWithChain(): void
     {

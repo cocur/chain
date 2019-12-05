@@ -12,7 +12,7 @@ class ChangeKeyCaseTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\ChangeKeyCase::changeKeyCase()
+     * @covers \Cocur\Chain\Link\ChangeKeyCase::changeKeyCase()
      */
     public function changeKeyCaseDefaultsToLower(): void
     {
@@ -25,7 +25,7 @@ class ChangeKeyCaseTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\ChangeKeyCase::changeKeyCase()
+     * @covers \Cocur\Chain\Link\ChangeKeyCase::changeKeyCase()
      */
     public function changeKeyCaseUsesGivenCase(): void
     {

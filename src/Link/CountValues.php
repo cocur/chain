@@ -15,7 +15,7 @@ trait CountValues
      *
      * Returns an array using the values of the array as keys and their frequency as values.
      *
-     * @return array An associative array of values from the array as keys and their count value.
+     * @return array an associative array of values from the array as keys and their count value
      */
     public function countValues(): array
     {

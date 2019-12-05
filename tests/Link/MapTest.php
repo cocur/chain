@@ -13,14 +13,16 @@ class MapTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Map::map()
+     * @covers \Cocur\Chain\Link\Map::map()
      */
     public function mapAppliesMapToArray(): void
     {
         /** @var Map $mock */
         $mock        = $this->getMockForTrait(Map::class);
         $mock->array = ['foobar', 'bar'];
-        $mock->map(function ($v) { return str_replace('bar', 'foo', $v); });
+        $mock->map(function ($v) {
+            return str_replace('bar', 'foo', $v);
+        });
 
         $this->assertEquals('foofoo', $mock->array[0]);
         $this->assertEquals('foo', $mock->array[1]);
@@ -28,7 +30,7 @@ class MapTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
-     * @covers Cocur\Chain\Link\Map::map()
+     * @covers \Cocur\Chain\Link\Map::map()
      */
     public function mapCallbackReceivesAlsoArrayKeys(): void
     {
@@ -36,7 +38,7 @@ class MapTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Map::class);
         $mock->array = ['foo' => 'fizz', 'bar' => 'buzz'];
         $mock->map(function ($v, $k) {
-            return $k == 'foo' ? str_replace('fizz', 'bang', $v) : $v;
+            return 'foo' == $k ? str_replace('fizz', 'bang', $v) : $v;
         });
 
         $this->assertEquals(['foo' => 'bang', 'bar' => 'buzz'], $mock->array);

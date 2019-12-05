@@ -3,6 +3,7 @@ preset: symfony
 enabled:
     - align_double_arrow
     - align_equals
+    - short_array_syntax
 
 disabled:
     - unalign_double_arrow

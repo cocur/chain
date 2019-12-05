@@ -13,7 +13,7 @@ class ShiftTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Shift::shift()
+     * @covers \Cocur\Chain\Link\Shift::shift()
      */
     public function shiftShiftsElementOff(): void
     {

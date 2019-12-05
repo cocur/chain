@@ -13,7 +13,7 @@ class ReduceTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Reduce::reduce()
+     * @covers \Cocur\Chain\Link\Reduce::reduce()
      */
     public function reduceReducesTheChain(): void
     {
@@ -21,6 +21,8 @@ class ReduceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Reduce::class);
         $mock->array = [1, 2, 3];
 
-        $this->assertEquals(6, $mock->reduce(function ($s, $v) { return $s + $v; }));
+        $this->assertEquals(6, $mock->reduce(function ($s, $v) {
+            return $s + $v;
+        }));
     }
 }

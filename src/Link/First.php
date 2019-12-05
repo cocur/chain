@@ -13,12 +13,14 @@ trait First
     /**
      * Returns the first element of the array.
      *
-     * @return mixed First element of the array or `false` if the array is empty.
+     * @return mixed first element of the array or `false` if the array is empty
      */
     public function first()
     {
         // To not change the internal array pointer we invoke reset() in a closure
-        $reset = function ($array) { return reset($array); };
+        $reset = function ($array) {
+            return reset($array);
+        };
 
         return $reset($this->array);
     }

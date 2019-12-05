@@ -13,7 +13,7 @@ class CountValuesTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\CountValues::countValues()
+     * @covers \Cocur\Chain\Link\CountValues::countValues()
      */
     public function countValuesReturnsValueCounts(): void
     {

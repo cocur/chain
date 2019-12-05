@@ -16,9 +16,9 @@ trait KeyExists
      * Returns `true` if the given `key` is set in the array. `key` can be any value possible for an array index.
      * Returns `true` if a key exists with a `null` value.
      *
-     * @param mixed $key Key or index to check.
+     * @param mixed $key key or index to check
      *
-     * @return bool `true` if key or index exists in array, `false` otherwise.
+     * @return bool `true` if key or index exists in array, `false` otherwise
      */
     public function keyExists($key): bool
     {

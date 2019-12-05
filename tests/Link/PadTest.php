@@ -13,7 +13,7 @@ class PadTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * @test
-     * @covers Cocur\Chain\Link\Pad::pad()
+     * @covers \Cocur\Chain\Link\Pad::pad()
      */
     public function padExtendsArray(): void
     {
