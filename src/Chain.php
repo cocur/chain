@@ -116,6 +116,8 @@ class Chain extends AbstractChain implements Countable
      *                          `explode()` is used
      *
      * @return self
+     *
+     * @throws \InvalidArgumentException if delimiter is an invalid regular exception
      */
     public static function createFromString(string $delimiter, string $string, array $options = []): self
     {
@@ -123,7 +125,11 @@ class Chain extends AbstractChain implements Countable
         $chain   = new static();
 
         if ($options['regexp']) {
-            $chain->array = preg_split($delimiter, $string);
+            $split = @preg_split($delimiter, $string);
+            if (false === $split) {
+                throw new \InvalidArgumentException('Invalid pattern "'.$delimiter.'"');
+            }
+            $chain->array = $split;
         } else {
             $chain->array = explode($delimiter, $string);
         }

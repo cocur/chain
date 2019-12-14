@@ -49,6 +49,16 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
+     * @covers \Cocur\Chain\Chain::createFromString()
+     */
+    public function createCreatesChainBySplittingThrowsOnInvalidPattern(): void
+    {
+        $this->expectException(\InvalidArgumentException::class);
+        Chain::createFromString(',', '1,2,3', ['regexp' => true]);
+    }
+
+    /**
+     * @test
      */
     public function chainHasTraits(): void
     {
