@@ -59,6 +59,18 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
+     * @covers \Cocur\Chain\Chain::fill()
+     */
+    public function fillCreatesAFilledChain(): void
+    {
+        $chain = Chain::fill(0, 10);
+
+        $this->assertIsArray($chain->array);
+        $this->assertCount(10, $chain->array);
+    }
+
+    /**
+     * @test
      */
     public function chainHasTraits(): void
     {
@@ -69,7 +81,6 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'count'));
         $this->assertTrue(method_exists($c, 'countValues'));
         $this->assertTrue(method_exists($c, 'diff'));
-        $this->assertTrue(method_exists($c, 'fill'));
         $this->assertTrue(method_exists($c, 'filter'));
         $this->assertTrue(method_exists($c, 'find'));
         $this->assertTrue(method_exists($c, 'first'));
