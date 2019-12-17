@@ -7,7 +7,6 @@ use Cocur\Chain\Link\Combine;
 use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\CountValues;
 use Cocur\Chain\Link\Diff;
-use Cocur\Chain\Link\Fill;
 use Cocur\Chain\Link\Filter;
 use Cocur\Chain\Link\First;
 use Cocur\Chain\Link\Find;
@@ -56,7 +55,6 @@ class Chain extends AbstractChain implements Countable
     use Count;
     use CountValues;
     use Diff;
-    use Fill;
     use Filter;
     use Find;
     use First;
@@ -135,5 +133,23 @@ class Chain extends AbstractChain implements Countable
         }
 
         return $chain;
+    }
+
+    /**
+     * Create a new Chain and fill with values.
+     *
+     * Creates a new Chain and fills the array with `num` entries of the value of `value` parameters, keys starting
+     * at the `startIndex` parameter.
+     *
+     * @param int   $startIndex The first index of the array. If `startIndex` is negative, the first index of the
+     *                          returned array will be `startIndex` and the following indices will start from zero.
+     * @param int   $num        Number of elements to insert. Must be greater than or equal to zero.
+     * @param mixed $value      value to use for filling
+     *
+     * @return self
+     */
+    public static function fill(int $startIndex, int $num, $value = null): self
+    {
+        return new self(array_fill($startIndex, $num, $value));
     }
 }
