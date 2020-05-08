@@ -81,6 +81,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'count'));
         $this->assertTrue(method_exists($c, 'countValues'));
         $this->assertTrue(method_exists($c, 'diff'));
+        $this->assertTrue(method_exists($c, 'every'));
         $this->assertTrue(method_exists($c, 'filter'));
         $this->assertTrue(method_exists($c, 'find'));
         $this->assertTrue(method_exists($c, 'first'));

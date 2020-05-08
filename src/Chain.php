@@ -7,6 +7,7 @@ use Cocur\Chain\Link\Combine;
 use Cocur\Chain\Link\Count;
 use Cocur\Chain\Link\CountValues;
 use Cocur\Chain\Link\Diff;
+use Cocur\Chain\Link\Every;
 use Cocur\Chain\Link\Filter;
 use Cocur\Chain\Link\First;
 use Cocur\Chain\Link\Find;
@@ -55,6 +56,7 @@ class Chain extends AbstractChain implements Countable
     use Count;
     use CountValues;
     use Diff;
+    use Every;
     use Filter;
     use Find;
     use First;
