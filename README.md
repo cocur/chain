@@ -205,6 +205,7 @@ $chain->reduce(function ($current, $value) {
 - `->join([$glue])`
 - `->last()`
 - `->reduce()`
+- `->some()`
 - `->sum()`
 
 ## Author

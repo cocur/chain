@@ -33,6 +33,7 @@ use Cocur\Chain\Link\Search;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Shuffle;
 use Cocur\Chain\Link\Slice;
+use Cocur\Chain\Link\Some;
 use Cocur\Chain\Link\Sort;
 use Cocur\Chain\Link\SortKeys;
 use Cocur\Chain\Link\Splice;
@@ -81,6 +82,7 @@ class Chain extends AbstractChain implements Countable
     use Shift;
     use Shuffle;
     use Slice;
+    use Some;
     use Sort;
     use SortKeys;
     use Splice;
