@@ -107,6 +107,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertTrue(method_exists($c, 'shift'));
         $this->assertTrue(method_exists($c, 'shuffle'));
         $this->assertTrue(method_exists($c, 'slice'));
+        $this->assertTrue(method_exists($c, 'some'));
         $this->assertTrue(method_exists($c, 'sort'));
         $this->assertTrue(method_exists($c, 'sortKeys'));
         $this->assertTrue(method_exists($c, 'splice'));
