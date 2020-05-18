@@ -13,6 +13,7 @@ use Cocur\Chain\Link\First;
 use Cocur\Chain\Link\Find;
 use Cocur\Chain\Link\FlatMap;
 use Cocur\Chain\Link\Flip;
+use Cocur\Chain\Link\Includes;
 use Cocur\Chain\Link\Intersect;
 use Cocur\Chain\Link\IntersectAssoc;
 use Cocur\Chain\Link\IntersectKey;
@@ -63,6 +64,7 @@ class Chain extends AbstractChain implements Countable
     use First;
     use FlatMap;
     use Flip;
+    use Includes;
     use Intersect;
     use IntersectAssoc;
     use IntersectKey;

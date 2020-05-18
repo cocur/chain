@@ -203,6 +203,7 @@ $chain->reduce(function ($current, $value) {
 - `->countValues()`
 - `->every(callable)`
 - `->first()`
+- `->includes(mixed[, array])`
 - `->join([$glue])`
 - `->last()`
 - `->reduce()`
