@@ -229,6 +229,17 @@ In case you want to support the development of Chain you can [send me an Euro or
 
 ## Change Log
 
+### Version 0.9.0 (19 July 2020)
+
+- [#42](https://github.com/cocur/chain/pull/42) Refactor to support strong typing (by [nreynis](https://github.com/nreynis))
+- [#45](https://github.com/cocur/chain/pull/45) Use self return type (by [nreynis](https://github.com/nreynis))
+- [#46](https://github.com/cocur/chain/pull/46) Bugfixes for splice and replace (by [nreynis](https://github.com/nreynis))
+- [#47](https://github.com/cocur/chain/pull/47) Handle invalid patterns in createFromString (by [nreynis](https://github.com/nreynis))
+- [#49](https://github.com/cocur/chain/pull/49) Move static factory fill method (by [nreynis](https://github.com/nreynis))
+- [#50](https://github.com/cocur/chain/pull/50) Add includes (in_array) (by [nreynis](https://github.com/nreynis))
+- [#51](https://github.com/cocur/chain/pull/51) Add every (by [nreynis](https://github.com/nreynis))
+- [#52](https://github.com/cocur/chain/pull/52) Add some (by [nreynis](https://github.com/nreynis))
+
 ### Version 0.8.0 (12 September 2019)
 
 - [#40](https://github.com/cocur/chain/pull/40) Update tooling and dependencies, set minimum PHP version to 7.2
