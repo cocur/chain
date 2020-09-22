@@ -5,6 +5,9 @@
     "autoload": {
         "psr-4": {"Cocur\\Chain\\": "src"}
     },
+    "autoload-dev": {
+        "psr-4": {"Cocur\\Chain\\": "tests"}
+    },
     "require": {
         "php": ">=7.2"
     },

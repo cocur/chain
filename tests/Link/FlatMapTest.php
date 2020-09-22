@@ -23,8 +23,8 @@ class FlatMapTest extends \PHPUnit\Framework\TestCase
             return [str_replace('bar', 'foo', $v)];
         });
 
-        $this->assertEquals('foofoo', $mock->array[0]);
-        $this->assertEquals('foo', $mock->array[1]);
+        $this->assertSame('foofoo', $mock->array[0]);
+        $this->assertSame('foo', $mock->array[1]);
     }
 
     /**

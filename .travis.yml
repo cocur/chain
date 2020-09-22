@@ -10,6 +10,9 @@ matrix:
     - php: 7.3
     - php: 7.3
       env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
+    - php: 7.4
+    - php: 7.4
+      env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
     - php: nightly
   allow_failures:
     - php: nightly

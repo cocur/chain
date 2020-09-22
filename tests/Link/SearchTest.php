@@ -21,6 +21,6 @@ class SearchTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Search::class);
         $mock->array = ['foo', 'bar'];
 
-        $this->assertEquals(1, $mock->search('bar'));
+        $this->assertSame(1, $mock->search('bar'));
     }
 }

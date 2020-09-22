@@ -21,6 +21,6 @@ class ProductTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Product::class);
         $mock->array = [2, 3];
 
-        $this->assertEquals(6, $mock->product());
+        $this->assertSame(6, $mock->product());
     }
 }

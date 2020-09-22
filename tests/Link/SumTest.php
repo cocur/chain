@@ -21,6 +21,6 @@ class SumTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Sum::class);
         $mock->array = [1, 2, 3];
 
-        $this->assertEquals(6, $mock->sum());
+        $this->assertSame(6, $mock->sum());
     }
 }
