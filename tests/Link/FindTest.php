@@ -24,7 +24,7 @@ class FindTest extends \PHPUnit\Framework\TestCase
         $result = $mock->find(function ($item): bool {
             return 'bar' === $item;
         });
-        $this->assertEquals('bar', $result);
+        $this->assertSame('bar', $result);
     }
 
     /**

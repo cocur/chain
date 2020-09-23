@@ -21,7 +21,7 @@ class ShiftTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Shift::class);
         $mock->array = [0, 1];
 
-        $this->assertEquals(0, $mock->shift());
+        $this->assertSame(0, $mock->shift());
         $this->assertEquals([1], $mock->array);
     }
 }

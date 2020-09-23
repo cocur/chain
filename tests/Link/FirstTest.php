@@ -21,6 +21,6 @@ class FirstTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(First::class);
         $mock->array = [0, 1, 2, 3];
 
-        $this->assertEquals(0, $mock->first());
+        $this->assertSame(0, $mock->first());
     }
 }

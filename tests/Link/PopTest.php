@@ -21,7 +21,7 @@ class PopTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Pop::class);
         $mock->array = [0, 1];
 
-        $this->assertEquals(1, $mock->pop());
+        $this->assertSame(1, $mock->pop());
         $this->assertEquals([0], $mock->array);
     }
 }

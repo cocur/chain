@@ -21,6 +21,6 @@ class CountTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Count::class);
         $mock->array = [0, 1, 2, 3];
 
-        $this->assertEquals(4, $mock->count());
+        $this->assertSame(4, $mock->count());
     }
 }

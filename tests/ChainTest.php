@@ -148,7 +148,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $this->assertFalse(isset($c[0]));
         $c[0] = 'foo';
         $this->assertTrue(isset($c[0]));
-        $this->assertEquals('foo', $c[0]);
+        $this->assertSame('foo', $c[0]);
         unset($c[0]);
         $this->assertFalse(isset($c[0]));
     }
@@ -162,7 +162,7 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $c = Chain::create([0, 1, 2]);
 
         $this->assertInstanceOf(\Countable::class, $c);
-        $this->assertEquals(3, count($c));
+        $this->assertCount(3, $c);
     }
 
     /**
@@ -174,6 +174,6 @@ class ChainTest extends \PHPUnit\Framework\TestCase
         $c = Chain::create([0, 1, 2]);
 
         $this->assertInstanceOf(\JsonSerializable::class, $c);
-        $this->assertEquals('[0,1,2]', json_encode($c));
+        $this->assertSame('[0,1,2]', json_encode($c));
     }
 }

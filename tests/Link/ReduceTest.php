@@ -21,7 +21,7 @@ class ReduceTest extends \PHPUnit\Framework\TestCase
         $mock        = $this->getMockForTrait(Reduce::class);
         $mock->array = [1, 2, 3];
 
-        $this->assertEquals(6, $mock->reduce(function ($s, $v) {
+        $this->assertSame(6, $mock->reduce(function ($s, $v) {
             return $s + $v;
         }));
     }
