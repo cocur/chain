@@ -71,6 +71,22 @@ class ChainTest extends \PHPUnit\Framework\TestCase
 
     /**
      * @test
+     * @covers \Cocur\Chain\Chain::merge()
+     */
+    public function fillCreatesAMergedChain(): void
+    {
+        $array1 = [1,2,3];
+        $array2 = [4,5];
+        $array3 = [6];
+
+        $chain = Chain::merge($array1, $array2, $array3);
+
+        $this->assertIsArray($chain->array);
+        $this->assertCount(6, $chain->array);
+    }
+
+    /**
+     * @test
      */
     public function chainHasTraits(): void
     {

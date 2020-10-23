@@ -158,4 +158,24 @@ class Chain extends AbstractChain implements Countable
     {
         return new self(array_fill($startIndex, $num, $value));
     }
+
+    /**
+     * Create a new Chain from multiple arrays.
+     * Creates a new Chain and merges the given arrays
+     * @param array ...$arrays The arrays to merge
+     *
+     * @return self
+     */
+    public static function merge(array &...$arrays): self
+    {
+        $result = [];
+
+        foreach ($arrays as $array) {
+            foreach($array as $item) {
+                $result[] = $item;
+            }
+        }
+
+        return new self($result);
+    }
 }
