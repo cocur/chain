@@ -34,6 +34,7 @@ use Cocur\Chain\Link\Reverse;
 use Cocur\Chain\Link\Search;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Shuffle;
+use Cocur\Chain\Link\SimpleMerge;
 use Cocur\Chain\Link\Slice;
 use Cocur\Chain\Link\Some;
 use Cocur\Chain\Link\Sort;
@@ -74,6 +75,7 @@ class Chain extends AbstractChain implements Countable
     use Last;
     use Map;
     use Merge;
+    use SimpleMerge;
     use Pad;
     use Pop;
     use Product;
@@ -157,25 +159,5 @@ class Chain extends AbstractChain implements Countable
     public static function fill(int $startIndex, int $num, $value = null): self
     {
         return new self(array_fill($startIndex, $num, $value));
-    }
-
-    /**
-     * Create a new Chain from multiple arrays.
-     * Creates a new Chain and merges the given arrays
-     * @param array ...$arrays The arrays to merge
-     *
-     * @return self
-     */
-    public static function merge(array &...$arrays): self
-    {
-        $result = [];
-
-        foreach ($arrays as $array) {
-            foreach($array as $item) {
-                $result[] = $item;
-            }
-        }
-
-        return new self($result);
     }
 }
