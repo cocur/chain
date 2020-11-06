@@ -34,6 +34,7 @@ use Cocur\Chain\Link\Reverse;
 use Cocur\Chain\Link\Search;
 use Cocur\Chain\Link\Shift;
 use Cocur\Chain\Link\Shuffle;
+use Cocur\Chain\Link\SimpleMerge;
 use Cocur\Chain\Link\Slice;
 use Cocur\Chain\Link\Some;
 use Cocur\Chain\Link\Sort;
@@ -74,6 +75,7 @@ class Chain extends AbstractChain implements Countable
     use Last;
     use Map;
     use Merge;
+    use SimpleMerge;
     use Pad;
     use Pop;
     use Product;
